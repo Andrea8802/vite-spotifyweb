@@ -1,0 +1,5 @@
+@mixin d-flex($justify-type, $align-type) {
+    display: flex;
+    justify-content: $justify-type;
+    align-items: $align-type;
+}
