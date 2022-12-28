@@ -230,4 +230,104 @@ footer {
     }
 
 }
+
+
+/* L Version */
+@media screen and (max-width: 1080px) {
+
+    .foot.left .icon {
+        margin-left: 16px;
+    }
+}
+
+/* MD Version */
+@media screen and (max-width: 820px) {
+    .foot.left .icon {
+        font-size: 15px;
+        margin-left: 0px;
+    }
+
+    .foot.right .bar {
+        width: 80px;
+    }
+
+    .foot.right .icon {
+        font-size: 12px;
+    }
+
+    .foot.center .icon {
+        font-size: 15px;
+    }
+
+    #play {
+        font-size: 25px;
+    }
+
+}
+
+/* MD 2 Version */
+@media screen and (max-width: 730px) {
+    .foot.right .bar {
+        display: none;
+    }
+
+    .preview-info {
+        display: none;
+    }
+}
+
+
+/* S Version */
+@media screen and (max-width: 642px) {
+    .foot.left .cover-preview {
+        display: none;
+    }
+
+    footer .foot.left .icon {
+        margin-left: 0px;
+    }
+}
+
+/* XS Version */
+@media screen and (max-width: 440px) {
+
+    .foot.right .icon {
+        flex-direction: column;
+    }
+
+    .foot.left .icon {
+        display: block;
+        margin: 5px 0;
+    }
+
+    .foot.center .bar-section span {
+        display: none;
+    }
+
+    .foot.center .bar {
+        width: 100%;
+    }
+
+    .foot.center .icon {
+        font-size: 13px;
+    }
+
+    #play {
+        font-size: 23px;
+    }
+}
+
+@media screen and (max-width: 360px) {
+
+    .foot.left,
+    .foot.right {
+        display: none;
+    }
+
+    footer {
+        justify-content: center;
+    }
+
+
+}
 </style>

@@ -9,7 +9,6 @@ export default {
         <div class="top">
             <ul class="pages">
                 <li>
-                    <!-- Da nascondere -->
                     <img src="src/assets/img/logo-small.svg" alt="Small Logo" class="logo-s">
                 </li>
 
@@ -285,6 +284,56 @@ export default {
             border-radius: 50%;
             margin-right: 8px;
         }
+    }
+}
+
+
+/* S Version */
+@media screen and (max-width: 642px) {
+
+    .left-menu {
+        width: 60px;
+        padding: 10px 0 0;
+        align-items: center;
+    }
+
+    #selected {
+        border-left: 0px;
+        margin-left: 0px;
+        padding-left: 0px;
+    }
+
+    .playlist,
+    .create,
+    .pages span,
+    .bottom span,
+    .left-menu hr {
+        display: none;
+    }
+
+    .bottom img {
+        display: block;
+        margin: 8px 0;
+    }
+
+    .download img {
+        width: 23px;
+        height: 24px;
+        margin-bottom: 15px;
+    }
+
+    .left-menu {
+        .logo-s {
+            display: inline-block;
+        }
+    }
+
+
+}
+
+@media screen and (max-height: 550px) {
+    .left-menu {
+        display: none;
     }
 }
 </style>

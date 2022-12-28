@@ -68,38 +68,6 @@ header {
         justify-content: flex-end;
     }
 
-    .left-menu {
-        width: 60px;
-        padding: 10px 0 0;
-        align-items: center;
-    }
-
-    #selected {
-        border-left: 0px;
-        margin-left: 0px;
-        padding-left: 0px;
-    }
-
-
-    .playlist,
-    .create,
-    .pages span,
-    .bottom span,
-    .left-menu hr {
-        display: none;
-    }
-
-    .bottom img {
-        display: block;
-        margin: 8px 0;
-    }
-
-    .download img {
-        width: 23px;
-        height: 24px;
-        margin-bottom: 15px;
-    }
-
     #logo-l {
         display: none;
     }
@@ -116,10 +84,6 @@ header {
 }
 
 @media screen and (max-height: 550px) {
-    .left-menu {
-        display: none;
-    }
-
     #logo-l {
         display: none;
     }

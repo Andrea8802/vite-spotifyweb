@@ -339,4 +339,24 @@ export default {
         }
     }
 }
+
+/* S Version */
+@media screen and (max-width: 642px) {
+    .content {
+        width: calc(100% - 60px);
+    }
+}
+
+@media screen and (max-height: 550px) {
+    .content {
+        width: 100%;
+    }
+}
+
+/* XS Version */
+@media screen and (max-width: 440px) {
+    .content {
+        padding-top: 30px;
+    }
+}
 </style>
