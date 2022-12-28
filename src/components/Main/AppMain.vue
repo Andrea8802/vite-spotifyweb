@@ -1,6 +1,6 @@
 <script>
 import LeftMenu from './LeftMenu.vue';
-import Content from './Content.vue';
+import Content from './ContentSection/Content.vue';
 
 export default {
     name: "AppMain",

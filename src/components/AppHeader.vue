@@ -55,7 +55,9 @@ header {
             margin-right: -10px;
             background-color: white;
             color: black;
+            padding: 20px 40px;
         }
+
     }
 }
 </style>

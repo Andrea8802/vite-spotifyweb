@@ -55,7 +55,9 @@ export default {
             <section class="recently">
                 <div class="card">
                     <div class="play-hover">
-                        <fa icon="fa-regular fa-circle-play" />
+                        <div class="icon">
+                            <fa icon="fa-regular fa-circle-play" />
+                        </div>
                     </div>
                     <img src="src/assets/img/metal_lifting.jpg" alt="Heavy Metal">
 
@@ -71,7 +73,9 @@ export default {
 
                 <div class="card">
                     <div class="play-hover">
-                        <fa icon="fa-regular fa-circle-play" />
+                        <div class="icon">
+                            <fa icon="fa-regular fa-circle-play" />
+                        </div>
                     </div>
                     <img src="src/assets/img/stranger.jpeg" alt="Stranger Things">
                     <h6>
@@ -84,7 +88,9 @@ export default {
 
                 <div class="card">
                     <div class="play-hover">
-                        <fa icon="fa-regular fa-circle-play" />
+                        <div class="icon">
+                            <fa icon="fa-regular fa-circle-play" />
+                        </div>
                     </div>
                     <img src="src/assets/img/aquietplace.jpeg" alt="A quiet place">
                     <h6>
@@ -97,7 +103,9 @@ export default {
 
                 <div class="card">
                     <div class="play-hover">
-                        <fa icon="fa-regular fa-circle-play" />
+                        <div class="icon">
+                            <fa icon="fa-regular fa-circle-play" />
+                        </div>
                     </div>
                     <img src="src/assets/img/split.jpeg" alt="Split">
                     <h6>
@@ -110,7 +118,9 @@ export default {
 
                 <div class="card">
                     <div class="play-hover">
-                        <fa icon="fa-regular fa-circle-play" />
+                        <div class="icon">
+                            <fa icon="fa-regular fa-circle-play" />
+                        </div>
                     </div>
                     <img src="src/assets/img/cure.jpeg" alt="A cure for wellness">
                     <h6>
@@ -123,7 +133,9 @@ export default {
 
                 <div class="card">
                     <div class="play-hover">
-                        <fa icon="fa-regular fa-circle-play" />
+                        <div class="icon">
+                            <fa icon="fa-regular fa-circle-play" />
+                        </div>
                     </div>
                     <img src="src/assets/img/sinister.jpeg" alt="Sinister">
                     <h6>
@@ -145,7 +157,9 @@ export default {
             <section class="for-you">
                 <div class="card">
                     <div class="play-hover">
-                        <fa icon="fa-regular fa-circle-play" />
+                        <div class="icon">
+                            <fa icon="fa-regular fa-circle-play" />
+                        </div>
                     </div>
                     <img src="src/assets/img/radar.jpeg" alt="Release Radar">
                     <h6>
@@ -154,7 +168,9 @@ export default {
                 </div>
                 <div class="card">
                     <div class="play-hover">
-                        <fa icon="fa-regular fa-circle-play" />
+                        <div class="icon">
+                            <fa icon="fa-regular fa-circle-play" />
+                        </div>
                     </div>
                     <img src="src/assets/img/mixdaily.jpeg" alt="Daily Mix 1">
                     <h6>
@@ -173,7 +189,9 @@ export default {
             <section class="popular">
                 <div class="circle card">
                     <div class="play-hover circle">
-                        <fa icon="fa-regular fa-circle-play" />
+                        <div class="icon">
+                            <fa icon="fa-regular fa-circle-play" />
+                        </div>
                     </div>
                     <img src="src/assets/img/youg.jpeg" alt="Young">
                     <h6>
@@ -183,7 +201,9 @@ export default {
 
                 <div class="circle card">
                     <div class="play-hover circle">
-                        <fa icon="fa-regular fa-circle-play" />
+                        <div class="icon">
+                            <fa icon="fa-regular fa-circle-play" />
+                        </div>
                     </div>
                     <img src="src/assets/img/einaudi.jpeg" alt="Ludovico Einaudi">
                     <h6>
