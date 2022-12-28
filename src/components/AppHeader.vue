@@ -61,8 +61,6 @@ header {
 }
 
 
-
-
 /* S Version */
 @media screen and (max-width: 642px) {
     header {
@@ -126,17 +124,15 @@ header {
         display: none;
     }
 
-    main {
-        margin-left: 0px;
-    }
-
     header {
         margin-left: 0px;
         justify-content: space-between;
     }
 
-    header>.logo-s {
-        display: inline-block;
+    header {
+        .logo-s {
+            display: inline-block;
+        }
     }
 
     .upgrade {
@@ -150,50 +146,14 @@ header {
 }
 
 @media screen and (max-height: 550px) and (min-width: 400px) {
-    header>.logo-s {
-        display: none;
+    header {
+        .logo-s {
+            display: none;
+        }
     }
 
     #logo-l {
         display: inline-block;
-    }
-}
-
-@media screen and (max-width: 1485px) {
-    main section {
-        flex-wrap: nowrap;
-    }
-
-    .card:nth-child(6) {
-        display: none;
-    }
-}
-
-@media screen and (max-width: 1270px) {
-    .card:nth-child(5) {
-        display: none;
-    }
-}
-
-@media screen and (max-width: 1070px) {
-    .card:nth-child(4) {
-        display: none;
-    }
-}
-
-@media screen and (max-width: 850px) {
-    .card:nth-child(3) {
-        display: none;
-    }
-}
-
-@media screen and (max-width: 470px) {
-    main section {
-        justify-content: center;
-    }
-
-    .card:nth-child(2) {
-        display: none;
     }
 }
 </style>
