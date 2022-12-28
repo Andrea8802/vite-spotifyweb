@@ -99,7 +99,7 @@ footer {
                 margin-left: 15px;
             }
 
-            &:hover {
+            *:hover {
                 color: white;
             }
         }
@@ -133,18 +133,20 @@ footer {
         .icon {
             color: white;
             font-size: 20px;
-            display: flex;
-            align-items: center;
+            @include d-flex(flex-start, center);
             gap: 20px;
             height: 20%;
+            cursor: pointer;
         }
 
         #play {
-            font-size: 30px;
-            margin: 0 10px;
+            font-size: 33px;
+            width: 50px;
+            cursor: pointer;
+            transition: all 0.2s ease;
 
             &:hover {
-                font-size: 34px;
+                font-size: 38px;
             }
         }
 
@@ -182,7 +184,7 @@ footer {
             gap: 20px;
             cursor: pointer;
 
-            &:hover {
+            *:hover {
                 color: white;
             }
         }

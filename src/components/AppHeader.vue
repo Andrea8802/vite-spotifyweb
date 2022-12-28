@@ -47,12 +47,10 @@ header {
         font-weight: 600;
         padding: 15px 40px;
         font-size: 12px;
-        transition: all 0.3s ease;
+        font-weight: bold;
+        transition: all 0.2s ease;
 
         &:hover {
-            font-size: 14px;
-            font-weight: bold;
-            margin-right: -10px;
             background-color: white;
             color: black;
         }
