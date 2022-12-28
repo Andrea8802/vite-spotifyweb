@@ -131,6 +131,13 @@ export default {
         filter: invert(0.5);
     }
 
+    .logo-s {
+        display: none;
+        filter: invert(0);
+        margin-left: 4px;
+        height: 55%;
+    }
+
     .pages {
 
         img {

@@ -55,9 +55,145 @@ header {
             margin-right: -10px;
             background-color: white;
             color: black;
-            padding: 20px 40px;
         }
 
+    }
+}
+
+
+
+
+/* S Version */
+@media screen and (max-width: 642px) {
+    header {
+        margin-left: 60px;
+        justify-content: flex-end;
+    }
+
+    .left-menu {
+        width: 60px;
+        padding: 10px 0 0;
+        align-items: center;
+    }
+
+    #selected {
+        border-left: 0px;
+        margin-left: 0px;
+        padding-left: 0px;
+    }
+
+
+    .playlist,
+    .create,
+    .pages span,
+    .bottom span,
+    .left-menu hr {
+        display: none;
+    }
+
+    .bottom img {
+        display: block;
+        margin: 8px 0;
+    }
+
+    .download img {
+        width: 23px;
+        height: 24px;
+        margin-bottom: 15px;
+    }
+
+    #logo-l {
+        display: none;
+    }
+
+}
+
+/* XS Version */
+@media screen and (max-width: 440px) {
+
+    header {
+        display: none;
+    }
+
+}
+
+@media screen and (max-height: 550px) {
+    .left-menu {
+        display: none;
+    }
+
+    #logo-l {
+        display: none;
+    }
+
+    main {
+        margin-left: 0px;
+    }
+
+    header {
+        margin-left: 0px;
+        justify-content: space-between;
+    }
+
+    header>.logo-s {
+        display: inline-block;
+    }
+
+    .upgrade {
+        font-size: 11px;
+        padding: 15px 30px;
+    }
+
+    .upgrade:hover {
+        font-size: 13px;
+    }
+}
+
+@media screen and (max-height: 550px) and (min-width: 400px) {
+    header>.logo-s {
+        display: none;
+    }
+
+    #logo-l {
+        display: inline-block;
+    }
+}
+
+@media screen and (max-width: 1485px) {
+    main section {
+        flex-wrap: nowrap;
+    }
+
+    .card:nth-child(6) {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1270px) {
+    .card:nth-child(5) {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1070px) {
+    .card:nth-child(4) {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .card:nth-child(3) {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 470px) {
+    main section {
+        justify-content: center;
+    }
+
+    .card:nth-child(2) {
+        display: none;
     }
 }
 </style>
