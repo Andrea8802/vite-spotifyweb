@@ -120,7 +120,6 @@ export default {
 .left-menu {
     width: 230px;
     height: calc(100vh - 90px);
-    z-index: 499;
     padding: 90px 10px 0;
     background-color: black;
     color: white;
