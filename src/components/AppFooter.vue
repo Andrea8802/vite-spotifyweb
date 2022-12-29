@@ -146,7 +146,7 @@ footer {
             transition: all 0.2s ease;
 
             &:hover {
-                font-size: 38px;
+                font-size: 36px;
             }
         }
 

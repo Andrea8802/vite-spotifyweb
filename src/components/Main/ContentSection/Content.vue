@@ -1,6 +1,15 @@
 <script>
+import RecentlySection from './RecentlySection.vue'
+import ForYouSection from './ForYouSection.vue'
+import ArtistsSection from './ArtistsSection.vue'
+
 export default {
     name: "Content",
+    components: {
+        RecentlySection,
+        ForYouSection,
+        ArtistsSection
+    }
 }
 
 </script>
@@ -49,168 +58,12 @@ export default {
                 </ul>
             </nav>
 
-            <h3>
-                Recently played
-            </h3>
-            <section class="recently">
-                <div class="card">
-                    <div class="play-hover">
-                        <div class="icon">
-                            <fa icon="fa-regular fa-circle-play" />
-                        </div>
-                    </div>
-                    <img src="src/assets/img/metal_lifting.jpg" alt="Heavy Metal">
+            <RecentlySection />
 
-                    <h6>
-                        Heavy Metal
-                    </h6>
+            <ForYouSection />
 
-                    <div class="sub-title">
-                        Subtitle
+            <ArtistsSection />
 
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="play-hover">
-                        <div class="icon">
-                            <fa icon="fa-regular fa-circle-play" />
-                        </div>
-                    </div>
-                    <img src="src/assets/img/stranger.jpeg" alt="Stranger Things">
-                    <h6>
-                        Stranger Things, Vol. 1 (a Netflix Original Series Soundtrck)
-                    </h6>
-                    <div class="sub-title">
-                        Kyle Dixon & Micheal Stein
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="play-hover">
-                        <div class="icon">
-                            <fa icon="fa-regular fa-circle-play" />
-                        </div>
-                    </div>
-                    <img src="src/assets/img/aquietplace.jpeg" alt="A quiet place">
-                    <h6>
-                        A quiet place
-                    </h6>
-                    <div class="sub-title">
-                        Subtitle
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="play-hover">
-                        <div class="icon">
-                            <fa icon="fa-regular fa-circle-play" />
-                        </div>
-                    </div>
-                    <img src="src/assets/img/split.jpeg" alt="Split">
-                    <h6>
-                        Split
-                    </h6>
-                    <div class="sub-title">
-                        Subtitle
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="play-hover">
-                        <div class="icon">
-                            <fa icon="fa-regular fa-circle-play" />
-                        </div>
-                    </div>
-                    <img src="src/assets/img/cure.jpeg" alt="A cure for wellness">
-                    <h6>
-                        A cure for wellness
-                    </h6>
-                    <div class="sub-title">
-                        Subtitle
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="play-hover">
-                        <div class="icon">
-                            <fa icon="fa-regular fa-circle-play" />
-                        </div>
-                    </div>
-                    <img src="src/assets/img/sinister.jpeg" alt="Sinister">
-                    <h6>
-                        Sinister
-                    </h6>
-                    <div class="sub-title">
-                        Subtitle
-                    </div>
-                </div>
-            </section>
-
-            <h3>
-                Creato per Jonh Doe
-            </h3>
-            <div class="sub-title">
-                Più ascolti, più accurati saranno i suggerimenti.
-            </div>
-
-            <section class="for-you">
-                <div class="card">
-                    <div class="play-hover">
-                        <div class="icon">
-                            <fa icon="fa-regular fa-circle-play" />
-                        </div>
-                    </div>
-                    <img src="src/assets/img/radar.jpeg" alt="Release Radar">
-                    <h6>
-                        Release Radar
-                    </h6>
-                </div>
-                <div class="card">
-                    <div class="play-hover">
-                        <div class="icon">
-                            <fa icon="fa-regular fa-circle-play" />
-                        </div>
-                    </div>
-                    <img src="src/assets/img/mixdaily.jpeg" alt="Daily Mix 1">
-                    <h6>
-                        Daily Mix 1
-                    </h6>
-                </div>
-            </section>
-
-            <h3>
-                Artisti più popolari
-            </h3>
-            <div class="sub-title">
-                Più ascolti, più accurati saranno i suggerimenti.
-            </div>
-
-            <section class="popular">
-                <div class="circle card">
-                    <div class="play-hover circle">
-                        <div class="icon">
-                            <fa icon="fa-regular fa-circle-play" />
-                        </div>
-                    </div>
-                    <img src="src/assets/img/youg.jpeg" alt="Young">
-                    <h6>
-                        Lana Del Ray
-                    </h6>
-                </div>
-
-                <div class="circle card">
-                    <div class="play-hover circle">
-                        <div class="icon">
-                            <fa icon="fa-regular fa-circle-play" />
-                        </div>
-                    </div>
-                    <img src="src/assets/img/einaudi.jpeg" alt="Ludovico Einaudi">
-                    <h6>
-                        Ludovico Einaudi
-                    </h6>
-                </div>
-            </section>
         </div>
     </section>
 </template>
