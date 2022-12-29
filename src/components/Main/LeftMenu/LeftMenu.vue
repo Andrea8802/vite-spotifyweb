@@ -1,6 +1,43 @@
 <script>
+import Playlist from './Playlist.vue';
+
 export default {
-    name: "LeftMenu"
+    name: "LeftMenu",
+    components: {
+        Playlist
+    },
+    data() {
+        return {
+            linkMenu: [
+                {
+                    name: "Home",
+                    img: "home.svg",
+                    link: "#",
+                    active: true
+                },
+
+                {
+                    name: "Cerca",
+                    img: "search.svg",
+                    link: "#",
+                    active: false
+                },
+
+                {
+                    name: "La Tua Libreria",
+                    img: "libreria.svg",
+                    link: "#",
+                    active: false
+                }
+            ]
+        }
+    },
+    methods: {
+        linkClicked(info) {
+            this.linkMenu.forEach(Element => Element.active = false)
+            info.active = true;
+        }
+    }
 }
 </script>
 
@@ -12,32 +49,15 @@ export default {
                     <img src="src/assets/img/logo-small.svg" alt="Small Logo" class="logo-s">
                 </li>
 
-                <li id="selected">
-                    <a href="#">
-                        <img src="src/assets/img/home.svg" alt="Home">
+                <li v-for="info in linkMenu" @click="linkClicked(info)">
+                    <a :href="info.link" :class="info.active ? 'selected' : ''">
+                        <img :src="'src/assets/img/' + info.img" :alt="info.name">
                         <span>
-                            Home
+                            {{ info.name }}
                         </span>
                     </a>
                 </li>
 
-                <li>
-                    <a href="#">
-                        <img src="src/assets/img/search.svg" alt="Search">
-                        <span>
-                            Cerca
-                        </span>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#">
-                        <img src="src/assets/img/libreria.svg" alt="">
-                        <span>
-                            La Tua Libreria
-                        </span>
-                    </a>
-                </li>
             </ul>
 
             <div class="create">
@@ -54,45 +74,7 @@ export default {
         </div>
 
         <div class="middle">
-            <div class="playlist">
-                <ul>
-                    <li>
-                        <a href="#">
-                            Nome Playlist
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            Nome Playlist
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            Nome Playlist
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            Nome Playlist
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            Nome Playlist
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            Nome Playlist
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            Nome Playlist
-                        </a>
-                    </li>
-                </ul>
-            </div>
+            <Playlist />
         </div>
 
         <div class="bottom">
@@ -114,7 +96,7 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-@use '../../styles/partials/mixins' as *;
+@use 'src/styles/partials/mixins' as *;
 
 .left-menu {
     width: 230px;
@@ -151,12 +133,12 @@ export default {
 
             &:hover a {
                 color: white;
-                transition: all 0.3s ease;
+                transition: all 0.2s ease;
             }
 
             &:hover img {
                 filter: invert(0);
-                transition: all 0.3s ease;
+                transition: all 0.2s ease;
             }
         }
 
@@ -173,10 +155,10 @@ export default {
         filter: invert(0);
     }
 
-    #selected {
+    .selected {
         border-left: 3px solid #adff2f;
-        margin-left: -10px;
         padding-left: 6px;
+        padding: 3px 0 6px;
 
         img {
             filter: invert(0);
@@ -216,26 +198,6 @@ export default {
         overflow-y: scroll;
         height: 100%;
         width: 100%;
-
-        .playlist {
-            padding-left: 5px;
-
-            li {
-                margin-top: 15px;
-
-                &:hover a {
-                    color: white;
-                }
-
-                a {
-                    color: gray;
-                    font-weight: bold;
-                    font-size: 13px;
-                    transition: all 0.2s ease;
-                }
-
-            }
-        }
 
     }
 
@@ -297,7 +259,7 @@ export default {
         align-items: center;
     }
 
-    #selected {
+    .selected {
         border-left: 0px;
         margin-left: 0px;
         padding-left: 0px;
