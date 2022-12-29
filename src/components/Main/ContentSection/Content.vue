@@ -51,6 +51,13 @@ export default {
                 },
             ]
         }
+    },
+
+    methods: {
+        linkClicked(info) {
+            this.linksNav.forEach(Element => Element.active = false)
+            info.active = true;
+        }
     }
 }
 
@@ -62,7 +69,7 @@ export default {
             <nav class="top-menu">
                 <ul>
 
-                    <li v-for="info in linksNav">
+                    <li v-for="info in linksNav" @click="linkClicked(info)">
                         <a :href="info.link" :class="info.active ? 'active-item' : ''">
                             {{ info.name }}
                         </a>
