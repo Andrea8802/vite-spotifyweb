@@ -68,24 +68,6 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-section {
-    margin: 30px 0 50px;
-    display: flex;
-    justify-content: flex-start;
-    flex-wrap: wrap;
-    gap: 10px;
-}
-
-h3 {
-    color: white;
-    font-weight: bold;
-    font-size: 25px;
-}
-
-.sub-title {
-    color: gray;
-    font-weight: bold;
-    font-size: 12px;
-    margin-top: 5px;
-}
+@use 'src/styles/partials/mixins' as *;
+@include sectionStyle;
 </style>

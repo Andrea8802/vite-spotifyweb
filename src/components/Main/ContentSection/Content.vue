@@ -9,6 +9,48 @@ export default {
         RecentlySection,
         ForYouSection,
         ArtistsSection
+    },
+
+    data() {
+        return {
+            linksNav: [
+                {
+                    name: "IN EVIDENZA",
+                    link: "#",
+                    active: true
+                },
+
+                {
+                    name: "PODCAST",
+                    link: "#",
+                    active: false
+                },
+
+                {
+                    name: "CLASSIFICHE",
+                    link: "#",
+                    active: false
+                },
+
+                {
+                    name: "GENERI E MOOD",
+                    link: "#",
+                    active: false
+                },
+
+                {
+                    name: "NUOVE USCITE",
+                    link: "#",
+                    active: false
+                },
+
+                {
+                    name: "SCOPRI",
+                    link: "#",
+                    active: false
+                },
+            ]
+        }
     }
 }
 
@@ -19,42 +61,14 @@ export default {
         <div class="container">
             <nav class="top-menu">
                 <ul>
-                    <li>
-                        <a href="#" class="active-item">
-                            IN EVIDENZA
+
+                    <li v-for="info in linksNav">
+                        <a :href="info.link" :class="info.active ? 'active-item' : ''">
+                            {{ info.name }}
                         </a>
-                        <hr>
+                        <hr v-if="info.active">
                     </li>
 
-                    <li>
-                        <a href="#">
-                            PODCAST
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#">
-                            CLASSIFICHE
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#">
-                            GENERI E MOOD
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#">
-                            NUOVE USCITE
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#">
-                            SCOPRI
-                        </a>
-                    </li>
                 </ul>
             </nav>
 
@@ -113,81 +127,6 @@ export default {
                 border: 1px solid#adff2f;
                 width: 30%;
                 margin: auto;
-            }
-        }
-
-        // Da sistemare
-        section {
-            margin: 30px 0 50px;
-            display: flex;
-            justify-content: flex-start;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        h3 {
-            color: white;
-            font-weight: bold;
-            font-size: 25px;
-        }
-
-        .sub-title {
-            color: gray;
-            font-weight: bold;
-            font-size: 12px;
-            margin-top: 5px;
-        }
-
-        .card {
-            max-width: 180px;
-            min-height: 280px;
-            text-align: center;
-            position: relative;
-            cursor: pointer;
-
-            &:hover .play-hover {
-                display: flex;
-            }
-
-            img {
-                width: 100%;
-            }
-
-            h6 {
-                color: white;
-                font-weight: bold;
-                font-size: 16px;
-                margin-top: 10px;
-            }
-
-            .play-hover {
-                width: 100%;
-                height: 180px;
-                background-color: rgba(0, 0, 0, 0.5);
-                position: absolute;
-                top: 0px;
-                display: none;
-                justify-content: center;
-                align-items: center;
-
-                .icon {
-                    font-size: 60px;
-                    color: white;
-                }
-            }
-
-            .play-hover.circle {
-                border-radius: 50%;
-
-                img {
-                    border-radius: 50%;
-                }
-            }
-        }
-
-        .card.circle {
-            img {
-                border-radius: 50%;
             }
         }
     }
