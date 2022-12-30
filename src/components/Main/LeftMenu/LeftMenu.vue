@@ -120,16 +120,16 @@ export default {
     }
 
     .pages {
-
-        img {
-            width: 30px;
-            height: 30px;
-            padding-right: 2px;
-        }
-
         li {
             margin: 8px 0;
             cursor: pointer;
+
+            img {
+                width: 30px;
+                height: 30px;
+                padding-right: 2px;
+            }
+
 
             &:hover a {
                 color: white;
@@ -157,8 +157,9 @@ export default {
 
     .selected {
         border-left: 3px solid #adff2f;
-        padding-left: 6px;
-        padding: 3px 0 6px;
+        display: inline-block;
+        padding-left: 10px;
+        margin-left: -10px;
 
         img {
             filter: invert(0);

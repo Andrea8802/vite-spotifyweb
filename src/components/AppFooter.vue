@@ -140,8 +140,8 @@ footer {
         }
 
         #play {
-            font-size: 33px;
-            width: 50px;
+            font-size: 32px;
+            width: 40px;
             cursor: pointer;
             transition: all 0.2s ease;
 
