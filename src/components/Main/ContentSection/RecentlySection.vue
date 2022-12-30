@@ -37,7 +37,7 @@ export default {
 
                 {
                     img: "cure.jpeg",
-                    title: "A cure for well",
+                    title: "A cure for wellness",
                     subtitle: "Subtitle"
                 },
 
@@ -55,12 +55,8 @@ export default {
 
 <template>
     <h3>
-        Creato per Jonh Doe
+        Recently played
     </h3>
-
-    <div class="sub-title">
-        Più ascolti, più accurati saranno i suggerimenti.
-    </div>
 
     <section>
         <Card :data="recently" />

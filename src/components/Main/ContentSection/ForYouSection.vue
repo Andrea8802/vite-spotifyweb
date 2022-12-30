@@ -30,8 +30,12 @@ export default {
 
 <template>
     <h3>
-        Recently played
+        Creato per Jonh Doe
     </h3>
+
+    <div class="sub-title">
+        Più ascolti, più accurati saranno i suggerimenti.
+    </div>
 
     <section>
         <Card :data="forYouTrack" />

@@ -78,7 +78,7 @@ export default {
         </div>
 
         <div class="bottom">
-            <a href="#" class="download">
+            <a href="https://www.spotify.com/it/download" class="download">
                 <img src="src/assets/img/download.svg" alt="">
                 <span>
                     Installa app
@@ -164,7 +164,7 @@ export default {
             filter: invert(0);
         }
 
-        a {
+        span {
             color: white;
         }
     }
@@ -252,45 +252,47 @@ export default {
 
 /* S Version */
 @media screen and (max-width: 642px) {
-
     .left-menu {
         width: 60px;
         padding: 10px 0 0;
         align-items: center;
-    }
 
-    .selected {
-        border-left: 0px;
-        margin-left: 0px;
-        padding-left: 0px;
-    }
-
-    .playlist,
-    .create,
-    .pages span,
-    .bottom span,
-    .left-menu hr {
-        display: none;
-    }
-
-    .bottom img {
-        display: block;
-        margin: 8px 0;
-    }
-
-    .download img {
-        width: 23px;
-        height: 24px;
-        margin-bottom: 15px;
-    }
-
-    .left-menu {
         .logo-s {
             display: inline-block;
         }
+
+        .selected {
+            border: 0px;
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .create,
+        .pages span {
+            display: none;
+        }
+
+        .bottom {
+            width: 100%;
+            @include d-flex(center, center);
+            flex-direction: column;
+
+            .download img {
+                width: 23px;
+                height: 24px;
+            }
+
+            span,
+            hr {
+                display: none;
+            }
+
+            img {
+                display: block;
+                margin: 8px 0;
+            }
+        }
     }
-
-
 }
 
 @media screen and (max-height: 550px) {

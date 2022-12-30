@@ -103,4 +103,11 @@ export default {
         color: white;
     }
 }
+
+/* S Version */
+@media screen and (max-width: 642px) {
+    .playlist {
+        display: none;
+    }
+}
 </style>
