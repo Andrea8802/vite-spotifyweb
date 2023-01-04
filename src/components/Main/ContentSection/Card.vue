@@ -1,21 +1,35 @@
 <script>
+import { store } from '../../../store'
+
 export default {
     name: "Card",
-    props: {
-        data: Array
+    data() {
+        return {
+            store,
+            imgCard: []
+        }
+    },
+    methods: {
+        openMusic(link) {
+            window.open(link);
+        }
     }
+
 }
 
 </script>
 
 <template>
-    <div class="card" :class="info.circle === true ? 'circle' : ''" v-for="info in data">
+    <div class="card" :class="info.circle === true ? 'circle' : ''" v-for="(info, index) in store.topTracks"
+        @click="openMusic(info.hub.actions[1].uri)">
         <div class="play-hover" :class="info.circle === true ? 'circle' : ''">
             <div class="icon">
                 <fa icon="fa-regular fa-circle-play" />
             </div>
         </div>
-        <img :src="'src/assets/img/' + info.img" :alt="info.title">
+
+        <img src="../../../assets/img/img-null.svg" :alt="info.title" v-if="info.images == null" class="null">
+        <img :src="info.images.coverarthq" :alt="info.title" v-else="">
 
         <h6>
             {{ info.title }}
@@ -23,25 +37,33 @@ export default {
 
         <div class="sub-title">
             {{ info.subtitle }}
-
         </div>
     </div>
 </template>
 
 <style lang="scss" scoped>
 .card {
-    max-width: 180px;
-    min-height: 280px;
+    width: 180px;
+    height: 280px;
     text-align: center;
     position: relative;
     cursor: pointer;
 
     &:hover .play-hover {
         display: flex;
+
+    }
+
+    &:hover .null {
+        opacity: 0.2;
     }
 
     img {
         width: 100%;
+    }
+
+    .null {
+        filter: invert(1);
     }
 
     h6 {
@@ -56,6 +78,10 @@ export default {
         font-weight: bold;
         font-size: 12px;
         margin-top: 5px;
+
+        &:hover {
+            text-decoration: underline;
+        }
     }
 
     .play-hover {
@@ -72,6 +98,7 @@ export default {
             font-size: 60px;
             color: white;
         }
+
     }
 
     .play-hover.circle {

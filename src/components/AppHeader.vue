@@ -46,7 +46,7 @@ header {
         color: white;
         font-weight: 600;
         padding: 15px 40px;
-        font-size: 14px;
+        font-size: 12px;
         font-weight: bold;
         transition: all 0.2s ease;
 
@@ -70,7 +70,7 @@ header {
         }
 
         .upgrade {
-            padding: 10px 20px;
+            padding: 12px 22px;
             font-size: 12px;
         }
 
