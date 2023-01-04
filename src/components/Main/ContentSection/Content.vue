@@ -21,20 +21,8 @@ export default {
 
             <!-- Top Tracks -->
             <h3>
-                Top Tracks
+                Tracce più ascolate
             </h3>
-            <section>
-                <Card />
-            </section>
-
-
-            <!-- For You -->
-            <h3>
-                Creato per Jonh Doe
-            </h3>
-            <div class="sub-title">
-                Più ascolti, più accurati saranno i suggerimenti.
-            </div>
             <section>
                 <Card />
             </section>
@@ -45,7 +33,7 @@ export default {
                 Artisti più popolari
             </h3>
             <div class="sub-title">
-                Più ascolti, più accurati saranno i suggerimenti.
+                Artisti più ascoltati nell'ultimo periodo
             </div>
             <section>
                 <CardArtist />

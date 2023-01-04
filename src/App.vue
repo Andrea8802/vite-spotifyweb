@@ -18,7 +18,7 @@ export default {
     const options = {
       method: 'GET',
       url: store.topTracksAPI,
-      params: { locale: 'en-US', pageSize: '20', startFrom: '0' },
+      params: { locale: 'en-US', pageSize: '10', startFrom: '0' },
       headers: {
         'X-RapidAPI-Key': 'b85ad614f4mshf86bd9a5ac77e66p15e702jsn25b99193398b',
         'X-RapidAPI-Host': 'shazam.p.rapidapi.com'
@@ -39,7 +39,6 @@ export default {
   <AppHeader />
   <AppMain />
   <AppFooter />
-
 
 </template>
 

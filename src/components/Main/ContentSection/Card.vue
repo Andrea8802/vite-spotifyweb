@@ -20,7 +20,7 @@ export default {
 </script>
 
 <template>
-    <div class="card" :class="info.circle === true ? 'circle' : ''" v-for="(info, index) in store.topTracks"
+    <div class="card" :class="info.circle === true ? 'circle' : ''" v-for="info in store.topTracks"
         @click="openMusic(info.hub.actions[1].uri)">
         <div class="play-hover" :class="info.circle === true ? 'circle' : ''">
             <div class="icon">
@@ -28,7 +28,7 @@ export default {
             </div>
         </div>
 
-        <img src="../../../assets/img/img-null.svg" :alt="info.title" v-if="info.images == null" class="null">
+        <img src="../../../assets/img/track-null.svg" :alt="info.title" v-if="info.images == null" class="null">
         <img :src="info.images.coverarthq" :alt="info.title" v-else="">
 
         <h6>

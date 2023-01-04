@@ -10,8 +10,8 @@ export default {
         }
     },
     methods: {
-        openMusic(link) {
-            window.open(link);
+        openArtist(nome) {
+            window.open("https://www.google.com/search?q=" + nome);
         }
     }
 
@@ -20,13 +20,13 @@ export default {
 </script>
 
 <template>
-    <div class="card circle" :class="info.circle === true ? 'circle' : ''" v-for="(info, index) in store.topTracks"
-        @click="openMusic(info.hub.actions[1].uri)">
+    <div class="card circle" :class="info.circle === true ? 'circle' : ''" v-for="info in store.topTracks"
+        @click="openArtist(info.subtitle)">
         <div class="play-hover circle">
 
         </div>
 
-        <img src="../../../assets/img/img-null.svg" :alt="info.title" v-if="info.images == null" class="null">
+        <img src="../../../assets/img/artist-null.svg" :alt="info.title" v-if="info.images == null" class="null">
         <img :src="info.images.background" :alt="info.title" v-else="">
 
         <h6>
@@ -89,11 +89,7 @@ export default {
         justify-content: center;
         align-items: center;
         border-radius: 50%;
-
-        .icon {
-            font-size: 60px;
-            color: white;
-        }
+        box-shadow: 0px 0px 10px gray;
 
     }
 }
