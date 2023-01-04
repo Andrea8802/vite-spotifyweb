@@ -1,63 +1,14 @@
 <script>
-import RecentlySection from './RecentlySection.vue'
-import ForYouSection from './ForYouSection.vue'
-import ArtistsSection from './ArtistsSection.vue'
+import TopMenu from './TopMenu.vue'
+import Card from './Card.vue';
+import CardArtist from './CardArtist.vue';
 
 export default {
     name: "Content",
     components: {
-        RecentlySection,
-        ForYouSection,
-        ArtistsSection
-    },
-
-    data() {
-        return {
-            linksNav: [
-                {
-                    name: "IN EVIDENZA",
-                    link: "#",
-                    active: true
-                },
-
-                {
-                    name: "PODCAST",
-                    link: "#",
-                    active: false
-                },
-
-                {
-                    name: "CLASSIFICHE",
-                    link: "#",
-                    active: false
-                },
-
-                {
-                    name: "GENERI E MOOD",
-                    link: "#",
-                    active: false
-                },
-
-                {
-                    name: "NUOVE USCITE",
-                    link: "#",
-                    active: false
-                },
-
-                {
-                    name: "SCOPRI",
-                    link: "#",
-                    active: false
-                },
-            ]
-        }
-    },
-
-    methods: {
-        linkClicked(info) {
-            this.linksNav.forEach(Element => Element.active = false)
-            info.active = true;
-        }
+        TopMenu,
+        Card,
+        CardArtist
     }
 }
 
@@ -66,24 +17,39 @@ export default {
 <template>
     <section class="content">
         <div class="container">
-            <nav class="top-menu">
-                <ul>
+            <TopMenu />
 
-                    <li v-for="info in linksNav" @click="linkClicked(info)">
-                        <a :href="info.link" :class="info.active ? 'active-item' : ''">
-                            {{ info.name }}
-                        </a>
-                        <hr v-if="info.active">
-                    </li>
+            <!-- Top Tracks -->
+            <h3>
+                Top Tracks
+            </h3>
+            <section>
+                <Card />
+            </section>
 
-                </ul>
-            </nav>
 
-            <RecentlySection />
+            <!-- For You -->
+            <h3>
+                Creato per Jonh Doe
+            </h3>
+            <div class="sub-title">
+                Più ascolti, più accurati saranno i suggerimenti.
+            </div>
+            <section>
+                <Card />
+            </section>
 
-            <ForYouSection />
 
-            <ArtistsSection />
+            <!-- Artist -->
+            <h3>
+                Artisti più popolari
+            </h3>
+            <div class="sub-title">
+                Più ascolti, più accurati saranno i suggerimenti.
+            </div>
+            <section>
+                <CardArtist />
+            </section>
 
         </div>
     </section>
@@ -101,41 +67,27 @@ export default {
         width: 90%;
         margin: 0 auto;
 
-        .top-menu {
-            ul {
-                margin-bottom: 50px;
-                list-style: none;
-                display: flex;
-                justify-content: center;
-                gap: 25px;
-                flex-wrap: wrap;
-            }
-
-            li {
-                a {
-                    color: gray;
-                    font-weight: bold;
-                    font-size: 13px;
-                    display: inline-block;
-                    padding-bottom: 3px;
-                    transition: all 0.3s ease;
-
-                    &:hover {
-                        color: white;
-                    }
-                }
-            }
-
-            .active-item {
-                color: white;
-            }
-
-            hr {
-                border: 1px solid#adff2f;
-                width: 30%;
-                margin: auto;
-            }
+        section {
+            margin: 30px 0 50px;
+            display: flex;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+            gap: 10px;
         }
+
+        h3 {
+            color: white;
+            font-weight: bold;
+            font-size: 25px;
+        }
+
+        .sub-title {
+            color: gray;
+            font-weight: bold;
+            font-size: 12px;
+            margin-top: 5px;
+        }
+
     }
 }
 

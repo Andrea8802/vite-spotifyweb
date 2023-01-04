@@ -2,6 +2,7 @@
 import LeftMenu from './LeftMenu/LeftMenu.vue';
 import Content from './ContentSection/Content.vue';
 
+
 export default {
     name: "AppMain",
     components: {

@@ -2,7 +2,7 @@
 import { store } from '../../../store'
 
 export default {
-    name: "Card",
+    name: "CardArtist",
     data() {
         return {
             store,
@@ -20,24 +20,18 @@ export default {
 </script>
 
 <template>
-    <div class="card" :class="info.circle === true ? 'circle' : ''" v-for="(info, index) in store.topTracks"
+    <div class="card circle" :class="info.circle === true ? 'circle' : ''" v-for="(info, index) in store.topTracks"
         @click="openMusic(info.hub.actions[1].uri)">
-        <div class="play-hover" :class="info.circle === true ? 'circle' : ''">
-            <div class="icon">
-                <fa icon="fa-regular fa-circle-play" />
-            </div>
+        <div class="play-hover circle">
+
         </div>
 
         <img src="../../../assets/img/img-null.svg" :alt="info.title" v-if="info.images == null" class="null">
-        <img :src="info.images.coverarthq" :alt="info.title" v-else="">
+        <img :src="info.images.background" :alt="info.title" v-else="">
 
         <h6>
-            {{ info.title }}
-        </h6>
-
-        <div class="sub-title">
             {{ info.subtitle }}
-        </div>
+        </h6>
     </div>
 </template>
 
@@ -60,6 +54,7 @@ export default {
 
     img {
         width: 100%;
+        border-radius: 50%;
     }
 
     .null {
@@ -93,6 +88,7 @@ export default {
         display: none;
         justify-content: center;
         align-items: center;
+        border-radius: 50%;
 
         .icon {
             font-size: 60px;

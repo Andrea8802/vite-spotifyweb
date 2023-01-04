@@ -1,29 +1,20 @@
 <script>
 import Card from './Card.vue'
+import CardArtist from './CardArtist.vue'
+import axios from 'axios';
+import { store } from '../../../store'
 
 export default {
     name: "ArtistsSection",
 
     components: {
-        Card
+        Card,
+        CardArtist
     },
 
     data() {
         return {
-            artists: [
-                {
-                    img: "youg.jpeg",
-                    title: "Lana Del Ray",
-                    circle: true
-                },
-
-                {
-                    img: "einaudi.jpeg",
-                    title: "Ludovico Einaudi",
-                    circle: true
-                }
-
-            ]
+            store
         }
     }
 }
@@ -31,16 +22,7 @@ export default {
 </script>
 
 <template>
-    <h3>
-        Artisti più popolari
-    </h3>
-    <div class="sub-title">
-        Più ascolti, più accurati saranno i suggerimenti.
-    </div>
 
-    <section>
-        <Card :data="artists" />
-    </section>
 </template>
 
 <style lang="scss" scoped>

@@ -29,17 +29,7 @@ export default {
 </script>
 
 <template>
-    <h3>
-        Creato per Jonh Doe
-    </h3>
 
-    <div class="sub-title">
-        Più ascolti, più accurati saranno i suggerimenti.
-    </div>
-
-    <section>
-        <Card :data="forYouTrack" />
-    </section>
 </template>
 
 <style lang="scss" scoped>
