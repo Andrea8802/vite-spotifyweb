@@ -1,7 +1,14 @@
 <script>
+import { store } from '../../../store'
 export default {
     name: "Card",
     props: ["data"],
+
+    data() {
+        return {
+            store
+        }
+    },
 
     methods: {
         openMusic(link) {
@@ -14,9 +21,34 @@ export default {
 </script>
 
 <template>
-    <div class="card" :class="info.circle === true ? 'circle' : ''" v-for="info in data"
-        @click="openMusic(info.hub.actions[1].uri)">
-        <div class="play-hover" :class="info.circle === true ? 'circle' : ''">
+
+    <!-- Card ricercate -->
+    <div class="card" v-for="info in data" @click="openMusic(info.track.hub.actions[1].uri)"
+        v-if="store.ricercaEffettuata">
+        <div class="play-hover">
+            <div class="icon">
+                <fa icon="fa-regular fa-circle-play" />
+            </div>
+        </div>
+
+        <img src="../../../assets/img/track-null.svg" :alt="info.track.title" v-if="info.track.images == null"
+            class="null">
+        <img :src="info.track.images.coverarthq" :alt="info.track.title" v-else="">
+
+        <h6>
+            {{ info.track.title }}
+        </h6>
+
+        <div class="sub-title">
+            {{ info.track.subtitle }}
+        </div>
+    </div>
+
+
+
+    <!-- Card traccie popolari -->
+    <div class="card" v-for="info in data" @click="openMusic(info.hub.actions[1].uri)" v-else="store.ricercaEffettuata">
+        <div class="play-hover">
             <div class="icon">
                 <fa icon="fa-regular fa-circle-play" />
             </div>

@@ -11,7 +11,7 @@ export default {
     },
 
     methods: {
-        cerca(ricercaUtente) {
+        cerca() {
             const options = {
                 method: 'GET',
                 url: 'https://shazam.p.rapidapi.com/search',
@@ -24,6 +24,13 @@ export default {
 
             axios.request(options).then(response => {
                 console.log(response.data);
+
+                store.traccieTrovate = response.data.tracks.hits;
+                store.artistiTrovati = response.data.artists.hits;
+
+                console.log(store.traccieTrovate);
+                console.log(store.artistiTrovati);
+
             }).catch(error => {
                 console.log(error);
             }).finally(() => {
@@ -40,8 +47,8 @@ export default {
         <img src="src/assets/img/logo-small.svg" alt="Logo" class="logo-s">
 
         <div>
-            <input type="search" name="ricerca" v-model="ricercaUtente" @keyup.enter="cerca(ricercaUtente)">
-            <button @click="cerca(ricercaUtente)">
+            <input type="search" name="ricerca" v-model="ricercaUtente" @keyup.enter="cerca">
+            <button @click="cerca">
                 Cerca
             </button>
         </div>

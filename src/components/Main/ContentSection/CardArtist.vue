@@ -5,19 +5,47 @@ export default {
     name: "CardArtist",
     props: ["data"],
 
+    data() {
+        return {
+            store
+        }
+    },
+
     methods: {
-        openArtist(nome) {
-            window.open("https://www.google.com/search?q=" + nome);
+        openArtist(link) {
+            window.open(link);
+        },
+
+        searchArtist(nome) {
+            window.open("https://www.google.com/search?q=" + nome)
         }
     }
-
 }
 
 </script>
 
 <template>
-    <div class="card circle" :class="info.circle === true ? 'circle' : ''" v-for="info in data"
-        @click="openArtist(info.subtitle)">
+
+    <!-- Card ricercate -->
+    <div class="card circle" v-for="info in data" @click="openArtist(info.artist.weburl)"
+        v-if="store.ricercaEffettuata">
+        <div class="play-hover circle">
+
+        </div>
+
+        <img src="../../../assets/img/artist-null.svg" :alt="info.artist.title" v-if="info.artist.avatar == null"
+            class="null">
+        <img :src="info.artist.avatar" :alt="info.artist.title" v-else="">
+
+        <h6>
+            {{ info.artist.name }}
+        </h6>
+    </div>
+
+
+
+    <!-- Card traccie popolari -->
+    <div class="card circle" v-for="info in data" @click="searchArtist(info.subtitle)" v-else="">
         <div class="play-hover circle">
 
         </div>
@@ -29,6 +57,10 @@ export default {
             {{ info.subtitle }}
         </h6>
     </div>
+
+
+
+
 </template>
 
 <style lang="scss" scoped>

@@ -32,7 +32,8 @@ export default {
                 Tracce più ascolate
             </h3>
             <section>
-                <Card :data="store.topTracks" />
+                <Card :data="store.traccieTrovate" v-if="store.ricercaEffettuata" />
+                <Card :data="store.topTracks" v-else="" />
             </section>
 
 
@@ -44,7 +45,8 @@ export default {
                 Artisti più ascoltati nell'ultimo periodo
             </div>
             <section>
-                <CardArtist :data="store.topTracks" />
+                <CardArtist :data="store.artistiTrovati" v-if="store.ricercaEffettuata" />
+                <CardArtist :data="store.topTracks" v-else="" />
             </section>
 
         </div>
