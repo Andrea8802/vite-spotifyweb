@@ -1,6 +1,36 @@
 <script>
+import { store } from '../store'
+import axios from 'axios';
+
 export default {
-    name: "AppHeader"
+    name: "AppHeader",
+    data() {
+        return {
+            ricercaUtente: ""
+        }
+    },
+
+    methods: {
+        cerca(ricercaUtente) {
+            const options = {
+                method: 'GET',
+                url: 'https://shazam.p.rapidapi.com/search',
+                params: { term: this.ricercaUtente, locale: 'en-US', offset: '0', limit: '10' },
+                headers: {
+                    'X-RapidAPI-Key': 'b85ad614f4mshf86bd9a5ac77e66p15e702jsn25b99193398b',
+                    'X-RapidAPI-Host': 'shazam.p.rapidapi.com'
+                }
+            }
+
+            axios.request(options).then(response => {
+                console.log(response.data);
+            }).catch(error => {
+                console.log(error);
+            }).finally(() => {
+                store.ricercaEffettuata = true;
+            })
+        }
+    }
 }
 </script>
 
@@ -8,6 +38,14 @@ export default {
     <header>
         <img src="src/assets/img/logo.svg" alt="Logo" id="logo-l">
         <img src="src/assets/img/logo-small.svg" alt="Logo" class="logo-s">
+
+        <div>
+            <input type="search" name="ricerca" v-model="ricercaUtente" @keyup.enter="cerca(ricercaUtente)">
+            <button @click="cerca(ricercaUtente)">
+                Cerca
+            </button>
+        </div>
+
         <a href="https://www.spotify.com/it/premium/" class="upgrade">
             EFFETTUA L'UPGRADE
         </a>

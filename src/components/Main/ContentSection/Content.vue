@@ -2,9 +2,17 @@
 import TopMenu from './TopMenu.vue'
 import Card from './Card.vue';
 import CardArtist from './CardArtist.vue';
+import { store } from '../../../store'
 
 export default {
     name: "Content",
+
+    data() {
+        return {
+            store
+        }
+    },
+
     components: {
         TopMenu,
         Card,
@@ -24,7 +32,7 @@ export default {
                 Tracce più ascolate
             </h3>
             <section>
-                <Card />
+                <Card :data="store.topTracks" />
             </section>
 
 
@@ -36,7 +44,7 @@ export default {
                 Artisti più ascoltati nell'ultimo periodo
             </div>
             <section>
-                <CardArtist />
+                <CardArtist :data="store.topTracks" />
             </section>
 
         </div>

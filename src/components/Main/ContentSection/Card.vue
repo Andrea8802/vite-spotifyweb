@@ -1,14 +1,8 @@
 <script>
-import { store } from '../../../store'
-
 export default {
     name: "Card",
-    data() {
-        return {
-            store,
-            imgCard: []
-        }
-    },
+    props: ["data"],
+
     methods: {
         openMusic(link) {
             window.open(link);
@@ -20,7 +14,7 @@ export default {
 </script>
 
 <template>
-    <div class="card" :class="info.circle === true ? 'circle' : ''" v-for="info in store.topTracks"
+    <div class="card" :class="info.circle === true ? 'circle' : ''" v-for="info in data"
         @click="openMusic(info.hub.actions[1].uri)">
         <div class="play-hover" :class="info.circle === true ? 'circle' : ''">
             <div class="icon">

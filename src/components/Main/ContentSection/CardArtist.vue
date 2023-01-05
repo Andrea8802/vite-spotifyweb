@@ -3,12 +3,8 @@ import { store } from '../../../store'
 
 export default {
     name: "CardArtist",
-    data() {
-        return {
-            store,
-            imgCard: []
-        }
-    },
+    props: ["data"],
+
     methods: {
         openArtist(nome) {
             window.open("https://www.google.com/search?q=" + nome);
@@ -20,7 +16,7 @@ export default {
 </script>
 
 <template>
-    <div class="card circle" :class="info.circle === true ? 'circle' : ''" v-for="info in store.topTracks"
+    <div class="card circle" :class="info.circle === true ? 'circle' : ''" v-for="info in data"
         @click="openArtist(info.subtitle)">
         <div class="play-hover circle">
 

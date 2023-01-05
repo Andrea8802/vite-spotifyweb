@@ -17,7 +17,7 @@ export default {
   mounted() {
     const options = {
       method: 'GET',
-      url: store.topTracksAPI,
+      url: 'https://shazam.p.rapidapi.com/charts/track',
       params: { locale: 'en-US', pageSize: '10', startFrom: '0' },
       headers: {
         'X-RapidAPI-Key': 'b85ad614f4mshf86bd9a5ac77e66p15e702jsn25b99193398b',
