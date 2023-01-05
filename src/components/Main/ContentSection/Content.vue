@@ -25,35 +25,57 @@ export default {
 <template>
     <section class="content">
         <div class="container">
-            <TopMenu />
 
-            <!-- Top Tracks -->
-            <h3>
-                Tracce più ascolate
-            </h3>
-            <section>
-                <Card :data="store.traccieTrovate" v-if="store.ricercaEffettuata" />
-                <Card :data="store.topTracks" v-else="" />
-            </section>
-
-
-            <!-- Artist -->
-            <h3>
-                Artisti più popolari
-            </h3>
-            <div class="sub-title">
-                Artisti più ascoltati nell'ultimo periodo
+            <!-- Loading per ricerca elementi -->
+            <div v-if="store.ricercaAvviata" class="loading">
+                <h2 v-if="store.erroreRicerca">
+                    La ricerca "{{ store.elementoCercato }}" non ha ottento nessun risulato
+                </h2>
+                <img src="src/assets/img/loading-img.svg" alt="" v-else>
             </div>
-            <section>
-                <CardArtist :data="store.artistiTrovati" v-if="store.ricercaEffettuata" />
-                <CardArtist :data="store.topTracks" v-else="" />
-            </section>
+
+            <!-- Risultato -->
+            <div v-else="">
+                <TopMenu />
+
+                <!-- Tracce -->
+                <h3 v-if="store.ricercaEffettuata">
+                    Tracce correlate a "{{ store.elementoCercato }}"
+                </h3>
+                <h3 v-else>
+                    Tracce più ascolate
+                </h3>
+                <section>
+                    <Card :data="store.ricercaEffettuata ? store.traccieTrovate : store.topTracks" />
+                </section>
+
+
+                <!-- Artisti -->
+                <h3 v-if="store.ricercaEffettuata">
+                    Artisti correlati a "{{ store.elementoCercato }}"
+                </h3>
+                <div v-else>
+                    <h3>
+                        Artisti più popolari
+                    </h3>
+                    <div class="sub-title">
+                        Artisti più ascoltati nell'ultimo periodo
+                    </div>
+                </div>
+
+                <section>
+                    <CardArtist :data="store.ricercaEffettuata ? store.artistiTrovati : store.topTracks" />
+                </section>
+            </div>
+
 
         </div>
     </section>
 </template>
 
 <style lang="scss" scoped>
+@use '../../../styles/partials/mixins' as *;
+
 .content {
     width: calc(100% - 230px);
     height: 100%;
@@ -64,6 +86,17 @@ export default {
     .container {
         width: 90%;
         margin: 0 auto;
+
+        .loading {
+            width: 100%;
+            height: calc(100vh - 200px);
+            @include d-flex(center, center);
+
+            h2 {
+                font-size: 30px;
+                color: white;
+            }
+        }
 
         section {
             margin: 30px 0 50px;

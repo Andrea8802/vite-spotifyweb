@@ -4,6 +4,10 @@ export const store = reactive({
     traccieTrovate: [],
     artistiTrovati: [],
 
-    ricercaEffettuata: false
+    ricercaUtente: "",
+    elementoCercato: "",
+    ricercaEffettuata: false,
+    ricercaAvviata: false,
 
+    erroreRicerca: false
 })
