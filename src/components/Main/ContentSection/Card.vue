@@ -114,6 +114,8 @@ export default {
         width: 100%;
         height: 180px;
         background-color: rgba(0, 0, 0, 0.5);
+        opacity: 1;
+        transition: all 1s ease;
         position: absolute;
         top: 0px;
         display: none;

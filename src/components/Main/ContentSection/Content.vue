@@ -136,7 +136,7 @@ export default {
 }
 
 /* XS Version */
-@media screen and (max-width: 440px) {
+@media screen and (max-width: 380px) {
     .content {
         padding-top: 30px;
     }

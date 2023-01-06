@@ -9,5 +9,6 @@ export const store = reactive({
     ricercaEffettuata: false,
     ricercaAvviata: false,
 
-    erroreRicerca: false
+    erroreRicerca: false,
+    loadingError: false
 })

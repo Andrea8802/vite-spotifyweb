@@ -2,16 +2,27 @@
 import AppHeader from './components/AppHeader.vue'
 import AppMain from './components/Main/AppMain.vue'
 import AppFooter from './components/AppFooter.vue';
+import Loader from './components/Loader.vue';
+
 import axios from 'axios'
 import { store } from './store'
 
 export default {
   name: "App",
 
+  data() {
+    return {
+      store,
+      pageLoaded: "",
+      loadingError: false
+    }
+  },
+
   components: {
     AppHeader,
     AppMain,
-    AppFooter
+    AppFooter,
+    Loader
   },
 
   mounted() {
@@ -27,18 +38,27 @@ export default {
 
     axios.request(options).then(response => {
       store.topTracks = response.data.tracks
-      console.log(response.data.tracks);
+
     }).catch(error => {
       console.error(error);
+      this.loadingError = true;
+
+    }).finally(() => {
+      if (this.loadingError) return;
+      this.pageLoaded = true;
     })
   }
 }
 </script>
 
 <template>
-  <AppHeader />
-  <AppMain />
-  <AppFooter />
+  <div v-if="pageLoaded">
+    <AppHeader />
+    <AppMain />
+    <AppFooter />
+  </div>
+
+  <Loader :error="loadingError" v-else />
 
 </template>
 

@@ -13,8 +13,8 @@ export default {
     methods: {
         cerca() {
             if (store.ricercaUtente === "") return;
-            store.erroreRicerca = false;
             store.ricercaAvviata = true;
+            store.erroreRicerca = false;
             store.elementoCercato = store.ricercaUtente;
             const options = {
                 method: 'GET',
@@ -143,7 +143,15 @@ header {
 }
 
 
+/* M Version */
+@media screen and (max-width: 870px) {
+    .upgrade {
+        display: none;
+    }
+}
+
 /* S Version */
+
 @media screen and (max-width: 642px) {
     header {
         margin-left: 60px;
@@ -153,16 +161,11 @@ header {
             display: none;
         }
 
-        .upgrade {
-            padding: 12px 22px;
-            font-size: 12px;
-        }
-
     }
 }
 
 /* XS Version */
-@media screen and (max-width: 440px) {
+@media screen and (max-width: 380px) {
     header {
         display: none;
     }
