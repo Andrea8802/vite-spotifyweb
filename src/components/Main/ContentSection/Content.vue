@@ -100,8 +100,7 @@ export default {
 
         section {
             margin: 30px 0 50px;
-            display: flex;
-            justify-content: flex-start;
+            @include d-flex(flex-start, flex-start);
             flex-wrap: wrap;
             gap: 10px;
         }
@@ -120,6 +119,17 @@ export default {
         }
 
     }
+}
+
+@media screen and (max-width: 1480px) {
+    .content {
+        .container {
+            section {
+                @include d-flex(center, flex-start);
+            }
+        }
+    }
+
 }
 
 /* S Version */

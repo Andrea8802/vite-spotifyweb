@@ -3,3 +3,176 @@
     justify-content: $justify-type;
     align-items: $align-type;
 }
+
+@mixin footerGeneralRules {
+    .foot {
+        width: 25%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+    }
+
+    /* L Version */
+    @media screen and (max-width: 1080px) {
+
+        .foot.left {
+            .icon {
+                margin-left: 16px;
+            }
+        }
+    }
+
+    /* MD Version */
+    @media screen and (max-width: 820px) {
+        .foot.left {
+            .icon {
+                font-size: 15px;
+                margin-left: 0px;
+            }
+        }
+
+        .foot.center {
+            .icon {
+                font-size: 15px;
+            }
+
+            #play {
+                font-size: 25px;
+            }
+        }
+
+        .foot.right {
+            .bar {
+                width: 80px;
+            }
+
+            .icon {
+                font-size: 12px;
+            }
+        }
+
+
+
+
+    }
+
+    /* MD 2 Version */
+    @media screen and (max-width: 730px) {
+        .foot.right {
+            .bar {
+                display: none;
+            }
+        }
+
+        .foot.left {
+            .preview-info {
+                display: none;
+            }
+        }
+    }
+
+
+    /* S Version */
+    @media screen and (max-width: 642px) {
+        footer {
+            .foot.left {
+                .icon {
+                    margin-left: 0px;
+                }
+
+                .cover-preview {
+                    display: none;
+                }
+            }
+
+        }
+    }
+
+    /* XS Version */
+    @media screen and (max-width: 440px) {
+
+        .foot.right {
+            .icon {
+                flex-direction: column;
+            }
+        }
+
+        .foot.left {
+            .icon {
+                display: block;
+                margin: 5px 0;
+            }
+        }
+
+        .foot.center {
+            .bar-section {
+                span {
+                    display: none;
+                }
+
+                .bar {
+                    width: 100%;
+                }
+            }
+
+            .icon {
+                font-size: 13px;
+            }
+
+            #play {
+                font-size: 23px;
+            }
+        }
+
+
+
+    }
+
+    @media screen and (max-width: 360px) {
+        footer {
+            justify-content: center;
+
+            .foot.left,
+            .foot.right {
+                display: none;
+            }
+        }
+
+    }
+}
+
+@mixin barFooter {
+    .bar {
+        background-color: #5a5a5a;
+        height: 4px;
+        border-radius: 30px;
+        cursor: pointer;
+
+        &:hover .point {
+            display: block;
+        }
+
+        &:hover .light-bar {
+            background-color: #adff2f;
+        }
+
+        .light-bar {
+            background-color: var(--dark-white);
+            height: 4px;
+            border-radius: 30px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .point {
+            background-color: white;
+            height: 13px;
+            width: 13px;
+            border-radius: 50%;
+            display: none;
+        }
+
+    }
+}
