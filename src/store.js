@@ -10,5 +10,28 @@ export const store = reactive({
     ricercaAvviata: false,
 
     erroreRicerca: false,
-    loadingError: false
+    loadingError: false,
+
+    linksLeftMenu: [
+        {
+            name: "Home",
+            img: "home.svg",
+            link: "#",
+            active: true
+        },
+
+        {
+            name: "Cerca",
+            img: "search.svg",
+            link: "#",
+            active: false
+        },
+
+        {
+            name: "La Tua Libreria",
+            img: "libreria.svg",
+            link: "#",
+            active: false
+        }
+    ]
 })

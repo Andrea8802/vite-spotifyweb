@@ -1,7 +1,7 @@
 <script>
 import AppHeader from './components/AppHeader.vue'
 import AppMain from './components/Main/AppMain.vue'
-import AppFooter from './components/AppFooter.vue';
+import AppFooter from './components/Footer/AppFooter.vue';
 import Loader from './components/Loader.vue';
 
 import axios from 'axios'
@@ -31,7 +31,7 @@ export default {
       url: 'https://shazam.p.rapidapi.com/charts/track',
       params: { locale: 'en-US', pageSize: '10', startFrom: '0' },
       headers: {
-        'X-RapidAPI-Key': 'b85ad614f4mshf86bd9a5ac77e66p15e702jsn25b99193398b',
+        'X-RapidAPI-Key': '644a0be476msh5287f3c17179483p17fb1cjsn8cd747d2fc3f',
         'X-RapidAPI-Host': 'shazam.p.rapidapi.com'
       }
     };
@@ -47,6 +47,7 @@ export default {
       if (this.loadingError) return;
       this.pageLoaded = true;
     })
+
   }
 }
 </script>

@@ -1,4 +1,5 @@
 <script>
+import { store } from '../../../store';
 import Playlist from './Playlist.vue';
 
 export default {
@@ -8,34 +9,21 @@ export default {
     },
     data() {
         return {
-            linkMenu: [
-                {
-                    name: "Home",
-                    img: "home.svg",
-                    link: "#",
-                    active: true
-                },
-
-                {
-                    name: "Cerca",
-                    img: "search.svg",
-                    link: "#",
-                    active: false
-                },
-
-                {
-                    name: "La Tua Libreria",
-                    img: "libreria.svg",
-                    link: "#",
-                    active: false
-                }
-            ]
+            store
         }
     },
     methods: {
         linkClicked(info) {
-            this.linkMenu.forEach(Element => Element.active = false)
+            store.linksLeftMenu.forEach(Element => Element.active = false)
             info.active = true;
+
+            if (info.name === "Home") {
+                store.ricercaEffettuata = false;
+            } else if (info.name === "Cerca") {
+                if (store.traccieTrovate.length === 0) return;
+                store.ricercaEffettuata = true;
+
+            }
         }
     }
 }
@@ -49,7 +37,7 @@ export default {
                     <img src="src/assets/img/logo-small.svg" alt="Small Logo" class="logo-s">
                 </li>
 
-                <li v-for="info in linkMenu" @click="linkClicked(info)">
+                <li v-for="info in store.linksLeftMenu" @click="linkClicked(info)">
                     <a :href="info.link" :class="info.active ? 'selected' : ''">
                         <img :src="'src/assets/img/' + info.img" :alt="info.name">
                         <span>

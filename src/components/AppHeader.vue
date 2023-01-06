@@ -21,7 +21,7 @@ export default {
                 url: 'https://shazam.p.rapidapi.com/search',
                 params: { term: store.ricercaUtente, locale: 'en-US', offset: '0', limit: '5' },
                 headers: {
-                    'X-RapidAPI-Key': 'b85ad614f4mshf86bd9a5ac77e66p15e702jsn25b99193398b',
+                    'X-RapidAPI-Key': '644a0be476msh5287f3c17179483p17fb1cjsn8cd747d2fc3f',
                     'X-RapidAPI-Host': 'shazam.p.rapidapi.com'
                 }
             }
@@ -41,6 +41,9 @@ export default {
                 store.ricercaAvviata = false;
                 store.ricercaEffettuata = true;
             })
+
+            store.linksLeftMenu.forEach(Element => Element.active = false)
+            store.linksLeftMenu[1].active = true;
 
 
         }

@@ -69,7 +69,7 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-@use '../styles/partials/mixins' as *;
+@use '../../styles/partials/mixins' as *;
 
 footer {
     height: 90px;
