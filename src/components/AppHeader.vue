@@ -19,7 +19,7 @@ export default {
             const options = {
                 method: 'GET',
                 url: 'https://shazam.p.rapidapi.com/search',
-                params: { term: store.ricercaUtente, locale: 'en-US', offset: '0', limit: '10' },
+                params: { term: store.ricercaUtente, locale: 'en-US', offset: '0', limit: '5' },
                 headers: {
                     'X-RapidAPI-Key': 'b85ad614f4mshf86bd9a5ac77e66p15e702jsn25b99193398b',
                     'X-RapidAPI-Host': 'shazam.p.rapidapi.com'
@@ -42,7 +42,6 @@ export default {
                 store.ricercaEffettuata = true;
             })
 
-            store.ricercaUtente = "";
 
         }
     }
@@ -57,7 +56,7 @@ export default {
         <div class="ricerca">
             <input type="search" name="ricerca" v-model="store.ricercaUtente" @keyup.enter="cerca">
             <button @click="cerca">
-                Cerca
+                CERCA
             </button>
         </div>
 
@@ -95,32 +94,40 @@ header {
 
     .ricerca {
         @include d-flex(center, center);
-        gap: 10px;
+        gap: 15px;
 
         input {
-            background-color: black;
+            background-color: rgb(10, 10, 10);
             border: 1px solid gray;
-            padding: 10px 20px;
+            padding: 13px 20px;
+            width: 400px;
             border-radius: 5px;
             color: white;
-            font-size: 16px;
+            font-size: 18px;
+            font-weight: bold;
+
 
 
             &:focus {
                 outline: none;
                 border: 2px solid gray;
-
             }
         }
 
         button {
-            padding: 10px 15px;
-            background-color: black;
+            padding: 14px 30px;
+            background-color: rgb(10, 10, 10);
             color: white;
             border: 1px solid gray;
             border-radius: 5px;
             font-size: 16px;
             cursor: pointer;
+            font-weight: bold;
+
+            &:active {
+                outline: none;
+                border: 2px solid gray;
+            }
         }
     }
 
@@ -143,15 +150,52 @@ header {
 }
 
 
-/* M Version */
-@media screen and (max-width: 870px) {
-    .upgrade {
-        display: none;
+@media screen and (max-width: 1130px) {
+    header {
+        .ricerca {
+            input {
+                width: 300px;
+                font-size: 16px;
+            }
+
+            button {
+                padding: 14px 20px;
+                font-size: 14px;
+
+            }
+        }
     }
 }
 
-/* S Version */
+@media screen and (max-width: 980px) {
+    header {
+        .ricerca {
+            margin-left: 50px;
 
+            input {
+                width: 280px;
+                font-size: 16px;
+            }
+
+            button {
+                padding: 13px 18px;
+                font-size: 14px;
+
+            }
+        }
+    }
+}
+
+/* M Version */
+@media screen and (max-width: 890px) {
+
+    .upgrade {
+        display: none;
+    }
+
+}
+
+/* S Version */
 @media screen and (max-width: 642px) {
     header {
         margin-left: 60px;
@@ -161,6 +205,23 @@ header {
             display: none;
         }
 
+    }
+}
+
+@media screen and (max-width:460px) {
+    header {
+        .ricerca {
+            input {
+                width: 200px;
+                font-size: 16px;
+            }
+
+            button {
+                padding: 13px 18px;
+                font-size: 14px;
+
+            }
+        }
     }
 }
 
