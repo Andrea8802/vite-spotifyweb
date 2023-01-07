@@ -13,10 +13,12 @@ export default {
 
 <template>
     <nav class="left-menu">
+        <!-- Sezione superiore -->
         <div class="top">
-
+            <!-- Sezione con gestione pagine -->
             <Pages />
 
+            <!-- Sezione per creare playlist -->
             <div class="create">
                 <h6>
                     PLAYLIST
@@ -30,11 +32,15 @@ export default {
             </div>
         </div>
 
+        <!-- Sezione centrale con playlist -->
         <div class="middle">
             <Playlist />
         </div>
 
+        <!-- Sezione inferiore  -->
         <div class="bottom">
+
+            <!-- Download app -->
             <a href="https://www.spotify.com/it/download" class="download">
                 <img src="src/assets/img/download.svg" alt="">
                 <span>
@@ -42,10 +48,12 @@ export default {
                 </span>
             </a>
             <hr>
+
+            <!-- Gestione profilo utente -->
             <a href="#" class="profile">
                 <img src="src/assets/img/profile.svg" alt="">
                 <span>
-                    Jonh Doe
+                    User Name
                 </span>
             </a>
         </div>
