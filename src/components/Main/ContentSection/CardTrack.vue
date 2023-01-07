@@ -19,7 +19,14 @@ export default {
             store.trackPreview.artist = info.track.subtitle;
             store.trackPreview.img = info.track.images.coverarthq;
             store.trackPreview.trackClicked = true;
-            console.log(store.trackPreview);
+        },
+
+        openMusicTop(info) {
+            window.open(info.hub.actions[1].uri);
+            store.trackPreview.title = info.title;
+            store.trackPreview.artist = info.subtitle;
+            store.trackPreview.img = info.images.coverarthq;
+            store.trackPreview.trackClicked = true;
         }
     }
 
@@ -59,7 +66,7 @@ export default {
 
 
     <!-- Card traccie popolari -->
-    <div class="card" v-for="info in data" @click="openMusic(info.hub.actions[1].uri)" v-else>
+    <div class="card" v-for="info in data" @click="openMusicTop(info)" v-else>
 
         <!-- Play Hover -->
         <div class="play-hover">
