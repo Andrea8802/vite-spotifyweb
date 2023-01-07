@@ -19,9 +19,11 @@ export default {
 
             if (info.name === "Home") {
                 store.ricercaEffettuata = false;
+                store.ricercaUtente = "";
             } else if (info.name === "Cerca") {
                 if (store.traccieTrovate.length === 0) return;
                 store.ricercaEffettuata = true;
+                store.ricercaUtente = store.elementoCercato;
 
             }
         }

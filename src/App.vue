@@ -3,7 +3,6 @@ import AppHeader from './components/AppHeader.vue'
 import AppMain from './components/Main/AppMain.vue'
 import AppFooter from './components/Footer/AppFooter.vue';
 import Loader from './components/Loader.vue';
-
 import axios from 'axios'
 import { store } from './store'
 

@@ -2,6 +2,7 @@
 export default {
     name: "Loader",
 
+    // Props per gestire l'errore (da: App.vue)
     props: ["error"]
 
 }
@@ -10,18 +11,23 @@ export default {
 <template>
 
     <div class="loading">
+
+        <!-- Logo spoify -->
         <img src="src/assets/img/logo-loading.png" alt="" class="logo">
+
+        <!-- Schermata di errore -->
         <h2 v-if="error" class="error">
             Errore! Riprova più tardi
         </h2>
+
+        <!-- Scritta e immagine animata per caricamento pagina -->
         <div class="loader" v-if="!error">
             <h2>
                 Caricamento in corso...
             </h2>
+
             <img src="src/assets/img/page-loader-img.svg" alt="">
         </div>
-
-
     </div>
 
 

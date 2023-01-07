@@ -16,6 +16,7 @@ export default {
             store.ricercaAvviata = true;
             store.erroreRicerca = false;
             store.elementoCercato = store.ricercaUtente;
+
             const options = {
                 method: 'GET',
                 url: 'https://shazam.p.rapidapi.com/search',
@@ -97,19 +98,22 @@ header {
 
     .ricerca {
         @include d-flex(center, center);
-        gap: 15px;
+        gap: 10px;
 
-        input {
+        input,
+        button {
             background-color: rgb(10, 10, 10);
             border: 1px solid gray;
-            padding: 13px 20px;
-            width: 400px;
-            border-radius: 5px;
             color: white;
-            font-size: 18px;
             font-weight: bold;
+            font-size: 16px;
+            border-radius: 20px;
 
+        }
 
+        input {
+            padding: 10px 20px;
+            width: 400px;
 
             &:focus {
                 outline: none;
@@ -118,14 +122,8 @@ header {
         }
 
         button {
-            padding: 14px 30px;
-            background-color: rgb(10, 10, 10);
-            color: white;
-            border: 1px solid gray;
-            border-radius: 5px;
-            font-size: 16px;
+            padding: 11px 30px;
             cursor: pointer;
-            font-weight: bold;
 
             &:active {
                 outline: none;

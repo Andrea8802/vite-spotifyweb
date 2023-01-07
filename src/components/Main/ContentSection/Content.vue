@@ -1,6 +1,6 @@
 <script>
 import TopMenu from './TopMenu.vue'
-import Card from './Card.vue';
+import CardTrack from './CardTrack.vue';
 import CardArtist from './CardArtist.vue';
 import { store } from '../../../store'
 
@@ -15,7 +15,7 @@ export default {
 
     components: {
         TopMenu,
-        Card,
+        CardTrack,
         CardArtist
     }
 }
@@ -46,7 +46,7 @@ export default {
                     Tracce più ascolate
                 </h3>
                 <section>
-                    <Card :data="store.ricercaEffettuata ? store.traccieTrovate : store.topTracks" />
+                    <CardTrack :data="store.ricercaEffettuata ? store.traccieTrovate : store.topTracks" />
                 </section>
 
 
