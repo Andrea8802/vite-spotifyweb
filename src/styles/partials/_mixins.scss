@@ -1,9 +1,11 @@
+// Blocco per utilizzare flexbox
 @mixin d-flex($justify-type, $align-type) {
     display: flex;
     justify-content: $justify-type;
     align-items: $align-type;
 }
 
+// Blocco per Le regole generali del footer
 @mixin footerGeneralRules {
     .foot {
         width: 25%;
@@ -141,6 +143,7 @@
     }
 }
 
+// Blocco per la barra temporale nel footer
 @mixin barFooter {
     .bar {
         background-color: #5a5a5a;
