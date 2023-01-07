@@ -45,6 +45,8 @@ export default {
     },
 
     methods: {
+
+        // Funzione per gestire stato attivo dei link
         linkClicked(info) {
             this.linksNav.forEach(Element => Element.active = false)
             info.active = true;
@@ -58,15 +60,15 @@ export default {
 
 <template>
     <nav class="top-menu">
-        <ul>
 
+        <!-- Link della navbar -->
+        <ul>
             <li v-for="info in linksNav" @click="linkClicked(info)">
                 <a :href="info.link" :class="info.active ? 'active-item' : ''">
                     {{ info.name }}
                 </a>
                 <hr v-if="info.active">
             </li>
-
         </ul>
     </nav>
 </template>

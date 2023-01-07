@@ -6,13 +6,18 @@ export default {
 
 <template>
     <div class="foot right">
+
+        <!-- Icone -->
         <div class="icon">
             <fa icon="fa-solid fa-list-ul" />
             <fa icon="fa-solid fa-display" />
             <fa icon="fa-solid fa-volume-high" />
         </div>
 
+        <!-- Barra temporale -->
         <div class="bar">
+
+            <!-- Barra onHover -->
             <div class="light-bar">
                 <div class="point"></div>
             </div>

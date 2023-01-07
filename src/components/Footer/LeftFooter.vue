@@ -1,23 +1,29 @@
 <script>
 export default {
     name: "LeftFooter"
-
 }
 </script>
 
 <template>
     <div class="foot left">
+
+        <!-- Preview Copertina musica riprodotta-->
         <img src="src/assets/img/sinister.jpeg" alt="Cover Preview" class="cover-preview">
+
+        <!-- Preview info musica riprodotta -->
         <span class="preview-info">
+
             <div class="music">
-                Sinister
+                Titolo
             </div>
             <div class="artist">
                 <a href="#">
-                    Brano Nome
+                    Artista
                 </a>
             </div>
         </span>
+
+        <!-- Icone -->
         <span class="icon">
             <fa icon="fa-regular fa-heart" />
             <fa icon="fa-regular fa-folder" />

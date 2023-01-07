@@ -7,6 +7,8 @@ export default {
 
 <template>
     <div class="foot center">
+
+        <!-- Icone per la gestione della traccia -->
         <div class="icon">
             <fa icon="fa-solid fa-shuffle" />
             <fa icon="fa-solid fa-backward-step" />
@@ -15,11 +17,17 @@ export default {
             <fa icon="fa-solid fa-rotate-right" />
         </div>
         <br>
+
+        <!-- Sezione barra temporale -->
         <div class="bar-section">
             <span>
                 0:25
             </span>
+
+            <!-- Barra -->
             <div class="bar">
+
+                <!-- Barra onHover -->
                 <div class="light-bar">
                     <div class="point"></div>
                 </div>

@@ -1,7 +1,7 @@
 <script>
 import { store } from '../../../store'
 export default {
-    name: "Card",
+    name: "CardTrack",
     props: ["data"],
 
     data() {
@@ -11,6 +11,8 @@ export default {
     },
 
     methods: {
+
+        // Funzione per apertura traccia al click
         openMusic(link) {
             window.open(link);
         }
@@ -25,20 +27,26 @@ export default {
     <!-- Card ricercate -->
     <div class="card" v-for="info in data" @click="openMusic(info.track.hub.actions[1].uri)"
         v-if="store.ricercaEffettuata">
+
+        <!-- Play Hover -->
         <div class="play-hover">
             <div class="icon">
                 <fa icon="fa-regular fa-circle-play" />
             </div>
         </div>
 
-        <img src="../../../assets/img/track-null.svg" :alt="info.track.title" v-if="info.track.images == null"
-            class="null">
+        <!-- Immagine sostituiva in caso di copertina mancante -->
+        <img src="src/assets/img/track-null.svg" :alt="info.track.title" v-if="info.track.images == null" class="null">
+
+        <!-- Copertina -->
         <img :src="info.track.images.coverarthq" :alt="info.track.title" v-else="">
 
+        <!-- Titolo -->
         <h6>
             {{ info.track.title }}
         </h6>
 
+        <!-- Sottotitolo/nome artisti -->
         <div class="sub-title">
             {{ info.track.subtitle }}
         </div>
@@ -47,20 +55,27 @@ export default {
 
 
     <!-- Card traccie popolari -->
-    <div class="card" v-for="info in data" @click="openMusic(info.hub.actions[1].uri)" v-else="store.ricercaEffettuata">
+    <div class="card" v-for="info in data" @click="openMusic(info.hub.actions[1].uri)" v-else>
+
+        <!-- Play Hover -->
         <div class="play-hover">
             <div class="icon">
                 <fa icon="fa-regular fa-circle-play" />
             </div>
         </div>
 
+        <!-- Immagine sostituiva in caso di copertina mancante -->
         <img src="../../../assets/img/track-null.svg" :alt="info.title" v-if="info.images == null" class="null">
+
+        <!-- Copertina -->
         <img :src="info.images.coverarthq" :alt="info.title" v-else="">
 
+        <!-- Titolo -->
         <h6>
             {{ info.title }}
         </h6>
 
+        <!-- Sottotitolo/nome artisti -->
         <div class="sub-title">
             {{ info.subtitle }}
         </div>

@@ -29,14 +29,18 @@ export default {
     <!-- Card ricercate -->
     <div class="card circle" v-for="info in data" @click="openArtist(info.artist.weburl)"
         v-if="store.ricercaEffettuata">
-        <div class="play-hover circle">
 
-        </div>
+        <!-- Play Hover -->
+        <div class="play-hover circle"></div>
 
+        <!-- Immagine sostituiva in caso di img profilo mancante -->
         <img src="../../../assets/img/artist-null.svg" :alt="info.artist.title" v-if="info.artist.avatar == null"
             class="null">
+
+        <!-- Immagine profilo -->
         <img :src="info.artist.avatar" :alt="info.artist.title" v-else="">
 
+        <!-- Nome Artista -->
         <h6>
             {{ info.artist.name }}
         </h6>
@@ -45,14 +49,18 @@ export default {
 
 
     <!-- Card traccie popolari -->
-    <div class="card circle" v-for="info in data" @click="searchArtist(info.subtitle)" v-else="">
-        <div class="play-hover circle">
+    <div class="card circle" v-for="info in data" @click="searchArtist(info.subtitle)" v-else>
 
-        </div>
+        <!-- Play Hover -->
+        <div class="play-hover circle"></div>
 
+        <!-- Immagine sostituiva in caso di img profilo mancante -->
         <img src="../../../assets/img/artist-null.svg" :alt="info.title" v-if="info.images == null" class="null">
-        <img :src="info.images.background" :alt="info.title" v-else="">
 
+        <!-- Immagine profilo -->
+        <img :src="info.images.background" :alt="info.title" v-else>
+
+        <!-- Nome Artista -->
         <h6>
             {{ info.subtitle }}
         </h6>
