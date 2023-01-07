@@ -15,6 +15,13 @@ export const store = reactive({
     erroreRicerca: false, // Flag errore ricerca elemento
     loadingError: false, // Flag errore cariamento app
 
+    trackPreview: {
+        title: "",
+        artist: "",
+        img: "",
+        trackClicked: false
+    },
+
     // Links del left menù
     linksLeftMenu: [
         {

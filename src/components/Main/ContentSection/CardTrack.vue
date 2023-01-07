@@ -13,8 +13,13 @@ export default {
     methods: {
 
         // Funzione per apertura traccia al click
-        openMusic(link) {
-            window.open(link);
+        openMusicSearched(info) {
+            window.open(info.track.hub.actions[1].uri);
+            store.trackPreview.title = info.track.title;
+            store.trackPreview.artist = info.track.subtitle;
+            store.trackPreview.img = info.track.images.coverarthq;
+
+            console.log(store.trackPreview);
         }
     }
 
@@ -25,8 +30,7 @@ export default {
 <template>
 
     <!-- Card ricercate -->
-    <div class="card" v-for="info in data" @click="openMusic(info.track.hub.actions[1].uri)"
-        v-if="store.ricercaEffettuata">
+    <div class="card" v-for="info in data" @click="openMusicSearched(info)" v-if="store.ricercaEffettuata">
 
         <!-- Play Hover -->
         <div class="play-hover">

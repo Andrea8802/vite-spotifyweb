@@ -1,6 +1,12 @@
 <script>
+import { store } from '../../store'
 export default {
-    name: "CenterFooter"
+    name: "CenterFooter",
+    data() {
+        return {
+            store
+        }
+    }
 
 }
 </script>
@@ -12,7 +18,8 @@ export default {
         <div class="icon">
             <fa icon="fa-solid fa-shuffle" />
             <fa icon="fa-solid fa-backward-step" />
-            <fa icon="fa-regular fa-circle-play" id="play" />
+
+            <fa icon="fa-regular fa-circle-play" id="play" v-if="store.trackPreview.trackClicked" />
             <fa icon="fa-solid fa-forward-step" />
             <fa icon="fa-solid fa-rotate-right" />
         </div>

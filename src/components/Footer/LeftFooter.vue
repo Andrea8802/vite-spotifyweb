@@ -1,6 +1,13 @@
 <script>
+import { store } from '../../store'
+
 export default {
-    name: "LeftFooter"
+    name: "LeftFooter",
+    data() {
+        return {
+            store
+        }
+    }
 }
 </script>
 
@@ -8,17 +15,17 @@ export default {
     <div class="foot left">
 
         <!-- Preview Copertina musica riprodotta-->
-        <img src="src/assets/img/sinister.jpeg" alt="Cover Preview" class="cover-preview">
+        <img :src="store.trackPreview.img" alt="Cover Preview" class="cover-preview">
 
         <!-- Preview info musica riprodotta -->
         <span class="preview-info">
 
             <div class="music">
-                Titolo
+                {{ store.trackPreview.title }}
             </div>
             <div class="artist">
                 <a href="#">
-                    Artista
+                    {{ store.trackPreview.artist }}
                 </a>
             </div>
         </span>
