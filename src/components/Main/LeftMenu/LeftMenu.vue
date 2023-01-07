@@ -1,32 +1,12 @@
 <script>
-import { store } from '../../../store';
 import Playlist from './Playlist.vue';
+import Pages from './Pages.vue';
 
 export default {
     name: "LeftMenu",
     components: {
-        Playlist
-    },
-    data() {
-        return {
-            store
-        }
-    },
-    methods: {
-        linkClicked(info) {
-            store.linksLeftMenu.forEach(Element => Element.active = false)
-            info.active = true;
-
-            if (info.name === "Home") {
-                store.ricercaEffettuata = false;
-                store.ricercaUtente = "";
-            } else if (info.name === "Cerca") {
-                if (store.traccieTrovate.length === 0) return;
-                store.ricercaEffettuata = true;
-                store.ricercaUtente = store.elementoCercato;
-
-            }
-        }
+        Playlist,
+        Pages
     }
 }
 </script>
@@ -34,21 +14,8 @@ export default {
 <template>
     <nav class="left-menu">
         <div class="top">
-            <ul class="pages">
-                <li>
-                    <img src="src/assets/img/logo-small.svg" alt="Small Logo" class="logo-s">
-                </li>
 
-                <li v-for="info in store.linksLeftMenu" @click="linkClicked(info)">
-                    <a :href="info.link" :class="info.active ? 'selected' : ''">
-                        <img :src="'src/assets/img/' + info.img" :alt="info.name">
-                        <span>
-                            {{ info.name }}
-                        </span>
-                    </a>
-                </li>
-
-            </ul>
+            <Pages />
 
             <div class="create">
                 <h6>
@@ -102,143 +69,87 @@ export default {
         filter: invert(0.5);
     }
 
-    .logo-s {
-        display: none;
-        filter: invert(0);
-        margin-left: 4px;
-        height: 55%;
+}
+
+.create {
+    h6 {
+        font-size: 14px;
+        font-weight: bold;
+        margin: 20px 0 10px
     }
 
-    .pages {
-        li {
-            margin: 8px 0;
-            cursor: pointer;
+    a {
+        font-size: 15px;
+        font-weight: bold;
+        color: grey;
+        transition: all 0.3s ease;
+    }
 
-            img {
-                width: 30px;
-                height: 30px;
-                padding-right: 2px;
-            }
+    .icon {
+        font-size: 44px;
+        vertical-align: middle;
+        margin-right: 5px;
+    }
 
+    &:hover a {
+        color: white;
+    }
+}
 
-            &:hover a {
-                color: white;
-                transition: all 0.2s ease;
-            }
+.middle {
+    overflow-y: scroll;
+    height: 100%;
+    width: 100%;
 
-            &:hover img {
-                filter: invert(0);
-                transition: all 0.2s ease;
-            }
+}
+
+.bottom {
+    margin: 10px 0;
+
+    hr {
+        margin: 8px 0;
+    }
+
+    .download {
+        font-size: 12px;
+        color: grey;
+        font-weight: bold;
+
+        &:hover span {
+            color: white;
         }
 
-        a {
-            font-weight: bold;
-            font-size: 13px;
-            color: gray;
-            padding-left: 5px;
-            font-weight: 600;
-        }
-    }
-
-    .logo-s {
-        filter: invert(0);
-    }
-
-    .selected {
-        border-left: 3px solid #adff2f;
-        display: inline-block;
-        padding-left: 10px;
-        margin-left: -10px;
-
-        img {
+        &:hover img {
             filter: invert(0);
         }
 
-        span {
-            color: white;
-        }
-    }
-
-    .create {
-        h6 {
-            font-size: 14px;
-            font-weight: bold;
-            margin: 20px 0 10px
-        }
-
-        a {
-            font-size: 15px;
-            font-weight: bold;
-            color: grey;
+        * {
             transition: all 0.3s ease;
         }
 
-        .icon {
-            font-size: 44px;
-            vertical-align: middle;
-            margin-right: 5px;
-        }
-
-        &:hover a {
-            color: white;
-        }
-    }
-
-    .middle {
-        overflow-y: scroll;
-        height: 100%;
-        width: 100%;
-
-    }
-
-    .bottom {
-        margin: 10px 0;
-
-        hr {
-            margin: 8px 0;
-        }
-
-        .download {
-            font-size: 12px;
-            color: grey;
-            font-weight: bold;
-
-            &:hover span {
-                color: white;
-            }
-
-            &:hover img {
-                filter: invert(0);
-            }
-
-            * {
-                transition: all 0.3s ease;
-            }
-
-            img {
-                width: 20px;
-                height: 20px;
-                padding-right: 2px;
-            }
-        }
-    }
-
-    .profile {
-        font-size: 14px;
-        font-weight: bold;
-        color: white;
-
         img {
-            width: 25px;
-            height: 25px;
-            background-color: gray;
-            filter: invert(0);
-            border-radius: 50%;
-            margin-right: 8px;
+            width: 20px;
+            height: 20px;
+            padding-right: 2px;
         }
     }
 }
+
+.profile {
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+
+    img {
+        width: 25px;
+        height: 25px;
+        background-color: gray;
+        filter: invert(0);
+        border-radius: 50%;
+        margin-right: 8px;
+    }
+}
+
 
 
 /* S Version */
