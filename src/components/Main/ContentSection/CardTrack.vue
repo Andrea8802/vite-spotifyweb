@@ -18,7 +18,7 @@ export default {
             store.trackPreview.title = info.track.title;
             store.trackPreview.artist = info.track.subtitle;
             store.trackPreview.img = info.track.images.coverarthq;
-
+            store.trackPreview.trackClicked = true;
             console.log(store.trackPreview);
         }
     }

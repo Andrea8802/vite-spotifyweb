@@ -6,6 +6,15 @@ export default {
         return {
             store
         }
+    },
+    methods: {
+        clickPause() {
+            if (store.trackPreview.trackClicked) {
+                store.trackPreview.trackClicked = false;
+            } else {
+                store.trackPreview.trackClicked = true;
+            }
+        }
     }
 
 }
@@ -18,8 +27,9 @@ export default {
         <div class="icon">
             <fa icon="fa-solid fa-shuffle" />
             <fa icon="fa-solid fa-backward-step" />
-
-            <fa icon="fa-regular fa-circle-play" id="play" v-if="store.trackPreview.trackClicked" />
+            <fa icon="fa-regular fa-circle-pause" class="play" v-if="store.trackPreview.trackClicked"
+                @click="clickPause" />
+            <fa icon="fa-regular fa-circle-play" class="play" v-else @click="clickPause" />
             <fa icon="fa-solid fa-forward-step" />
             <fa icon="fa-solid fa-rotate-right" />
         </div>
@@ -68,7 +78,7 @@ export default {
         cursor: pointer;
     }
 
-    #play {
+    .play {
         font-size: 32px;
         width: 40px;
         cursor: pointer;

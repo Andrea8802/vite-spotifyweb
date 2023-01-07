@@ -14,13 +14,15 @@ export default {
 <template>
     <div class="foot left">
 
-        <!-- Preview Copertina musica riprodotta-->
-        <img :src="store.trackPreview.img" alt="Cover Preview" class="cover-preview">
+        <img :src="store.trackPreview.img" alt="Cover Preview" class="cover-preview"
+            v-if="store.trackPreview.img !== ''">
 
         <!-- Preview info musica riprodotta -->
         <span class="preview-info">
-
-            <div class="music">
+            <div class="music" v-if="store.trackPreview.title === ''">
+                Scegli una traccia!
+            </div>
+            <div class="music" v-else>
                 {{ store.trackPreview.title }}
             </div>
             <div class="artist">
