@@ -24,6 +24,7 @@ export default {
             // Variabile per salvare la ricerca anche se viene cancellato l'input
             store.elementoCercato = store.ricercaUtente;
 
+            // Chiamata API per ricerca elemento
             const options = {
                 method: 'GET',
                 url: 'https://shazam.p.rapidapi.com/search',
@@ -35,21 +36,25 @@ export default {
             }
 
             axios.request(options).then(response => {
-                console.log(response.data);
                 store.traccieTrovate = response.data.tracks.hits;
                 store.artistiTrovati = response.data.artists.hits;
 
 
             }).catch(error => {
                 console.log(error);
+
+                // Mostrare avviso in caso di ricerca senza risultato
                 store.erroreRicerca = true;
 
             }).finally(() => {
+
+                // Mostrare risultati se la ricerca va buon fine
                 if (store.erroreRicerca) return;
                 store.ricercaAvviata = false;
                 store.ricercaEffettuata = true;
             })
 
+            // Disattivare la voce del left menu attiva e evidenziare "Ricerca"
             store.linksLeftMenu.forEach(Element => Element.active = false)
             store.linksLeftMenu[1].active = true;
 
@@ -64,6 +69,7 @@ export default {
         <img src="src/assets/img/logo.svg" alt="Logo" id="logo-l">
         <img src="src/assets/img/logo-small.svg" alt="Logo" class="logo-s">
 
+        <!-- Ricerca elementi -->
         <div class="ricerca">
             <input type="search" name="ricerca" v-model="store.ricercaUtente" @keyup.enter="cerca">
             <button @click="cerca">
@@ -113,7 +119,6 @@ header {
             border: 1px solid gray;
             color: white;
             font-weight: bold;
-            font-size: 16px;
             border-radius: 20px;
 
         }
@@ -121,6 +126,7 @@ header {
         input {
             padding: 10px 20px;
             width: 400px;
+            font-size: 16px;
 
             &:focus {
                 outline: none;
@@ -131,6 +137,8 @@ header {
         button {
             padding: 11px 30px;
             cursor: pointer;
+            font-size: 14px;
+
 
             &:active {
                 outline: none;
