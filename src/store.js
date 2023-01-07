@@ -15,12 +15,37 @@ export const store = reactive({
     erroreRicerca: false, // Flag errore ricerca elemento
     loadingError: false, // Flag errore cariamento app
 
+    // Info preview tracce
     trackPreview: {
         title: "",
         artist: "",
         img: "",
-        trackClicked: false
+        trackClicked: false // Gestione tasto play
     },
+
+    audioTraccia: "",
+    timeTrack: "00:00",
+    secondsTrack: 0,
+    minuteTrack: 0,
+
+    conteggioTempo: (() => {
+        if (store.secondsTrack === 59) {
+            store.minuteTrack++;
+            store.secondsTrack = 0;
+        } else {
+            store.secondsTrack++
+        }
+
+        if (store.secondsTrack >= 10) {
+            store.timeTrack = `0${store.minuteTrack}:${store.secondsTrack}`
+        } else if (store.minuteTrack >= 10) {
+            store.timeTrack = `${store.minuteTrack}:0${store.secondsTrack}`
+        } else {
+            store.timeTrack = `0${store.minuteTrack}:0${store.secondsTrack}`
+        }
+    }),
+
+    playPausa: "",
 
     // Links del left menù
     linksLeftMenu: [

@@ -9,10 +9,18 @@ export default {
     },
     methods: {
         clickPause() {
+
+            // Gestione tasto play/pausa
             if (store.trackPreview.trackClicked) {
                 store.trackPreview.trackClicked = false;
+                store.audioTraccia.pause();
+                clearInterval(store.playPausa);
+
             } else {
                 store.trackPreview.trackClicked = true;
+                store.audioTraccia.play();
+                store.playPausa = setInterval(store.conteggioTempo, 1000);
+
             }
         }
     }
@@ -38,7 +46,7 @@ export default {
         <!-- Sezione barra temporale -->
         <div class="bar-section">
             <span>
-                0:25
+                {{ store.timeTrack }}
             </span>
 
             <!-- Barra -->

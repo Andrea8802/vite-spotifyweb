@@ -14,19 +14,27 @@ export default {
 
         // Funzione per apertura traccia al click
         openMusicSearched(info) {
-            window.open(info.track.hub.actions[1].uri);
             store.trackPreview.title = info.track.title;
             store.trackPreview.artist = info.track.subtitle;
             store.trackPreview.img = info.track.images.coverarthq;
             store.trackPreview.trackClicked = true;
+
+            store.audioTraccia = new Audio(info.track.hub.actions[1].uri)
+            store.audioTraccia.play()
+
+
         },
 
         openMusicTop(info) {
-            window.open(info.hub.actions[1].uri);
             store.trackPreview.title = info.title;
             store.trackPreview.artist = info.subtitle;
             store.trackPreview.img = info.images.coverarthq;
             store.trackPreview.trackClicked = true;
+
+            store.audioTraccia = new Audio(info.hub.actions[1].uri);
+            store.audioTraccia.play();
+
+            store.playPausa = setInterval(store.conteggioTempo, 1000)
         }
     }
 

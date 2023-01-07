@@ -25,7 +25,7 @@ export default {
   },
 
   created() {
-
+    clearInterval(store.tempoTraccia)
     // Chiamate api per traccie e artisti più popolari
     const options = {
       method: 'GET',
@@ -54,6 +54,7 @@ export default {
       store.trackPreview.title = store.topTracks[0].title;
       store.trackPreview.artist = store.topTracks[0].subtitle;
       store.trackPreview.img = store.topTracks[0].images.coverarthq;
+      store.audioTraccia = new Audio(store.topTracks[0].hub.actions[1].uri)
     })
 
   }
