@@ -24,7 +24,9 @@ export default {
     Loader
   },
 
-  mounted() {
+  created() {
+
+    // Chiamate api per traccie e artisti più popolari
     const options = {
       method: 'GET',
       url: 'https://shazam.p.rapidapi.com/charts/track',
@@ -40,9 +42,12 @@ export default {
 
     }).catch(error => {
       console.error(error);
+
+      // In caso di errore, mostrare l'avviso sul loader e non mostrare la pagina
       this.loadingError = true;
 
     }).finally(() => {
+      // Mostrare la pagina se la chiamata va a buon fine
       if (this.loadingError) return;
       this.pageLoaded = true;
     })

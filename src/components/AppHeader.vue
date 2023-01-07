@@ -11,10 +11,17 @@ export default {
     },
 
     methods: {
+
+        // Funzione per ricercare un elemento da un input
         cerca() {
             if (store.ricercaUtente === "") return;
+
+            // Flag per controllare l'animazione del caricamento
             store.ricercaAvviata = true;
+
             store.erroreRicerca = false;
+
+            // Variabile per salvare la ricerca anche se viene cancellato l'input
             store.elementoCercato = store.ricercaUtente;
 
             const options = {
