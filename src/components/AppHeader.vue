@@ -17,7 +17,7 @@ export default {
             if (store.ricercaUtente === "") return;
 
             // Flag per controllare l'animazione del caricamento
-            store.ricercaAvviata = true;
+            store.ricercaInCorso = true;
 
             store.erroreRicerca = false;
 
@@ -50,7 +50,7 @@ export default {
 
                 // Mostrare risultati se la ricerca va buon fine
                 if (store.erroreRicerca) return;
-                store.ricercaAvviata = false;
+                store.ricercaInCorso = false;
                 store.ricercaEffettuata = true;
             })
 

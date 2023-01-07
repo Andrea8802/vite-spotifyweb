@@ -27,7 +27,7 @@ export default {
         <div class="container">
 
             <!-- Loading per ricerca elementi -->
-            <div v-if="store.ricercaAvviata" class="loading">
+            <div v-if="store.ricercaInCorso" class="loading">
                 <h2 v-if="store.erroreRicerca">
                     La ricerca "{{ store.elementoCercato }}" non ha ottento nessun risulato
                 </h2>

@@ -1,17 +1,21 @@
 import { reactive } from 'vue';
 export const store = reactive({
+    // Array per risposte API
     topTracks: [],
     traccieTrovate: [],
     artistiTrovati: [],
 
-    ricercaUtente: "",
-    elementoCercato: "",
-    ricercaEffettuata: false,
-    ricercaAvviata: false,
+    // Ricerca Utente
+    ricercaUtente: "",  // v-model per input text
+    elementoCercato: "",    // variabile per salvare la ricerca
+    ricercaEffettuata: false, // Flag ricerca finita
+    ricercaInCorso: false, // Flag ricerca in corso
 
-    erroreRicerca: false,
-    loadingError: false,
+    // Gestione errori
+    erroreRicerca: false, // Flag errore ricerca elemento
+    loadingError: false, // Flag errore cariamento app
 
+    // Links del left menù
     linksLeftMenu: [
         {
             name: "Home",
