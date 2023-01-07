@@ -50,6 +50,10 @@ export default {
       // Mostrare la pagina se la chiamata va a buon fine
       if (this.loadingError) return;
       this.pageLoaded = true;
+      console.log(store.topTracks);
+      store.trackPreview.title = store.topTracks[0].title;
+      store.trackPreview.artist = store.topTracks[0].subtitle;
+      store.trackPreview.img = store.topTracks[0].images.coverarthq;
     })
 
   }
