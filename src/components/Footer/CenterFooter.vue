@@ -32,7 +32,6 @@ export default {
             setTimeout(() => document.getElementById("btn-reset").classList.remove("track-reset"), 500)
         }
     }
-
 }
 </script>
 
