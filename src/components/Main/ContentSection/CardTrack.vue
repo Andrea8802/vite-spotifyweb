@@ -12,32 +12,71 @@ export default {
 
     methods: {
 
-        // Funzione per apertura traccia al click
+        // Funzione per apertura traccia al click (ricercata)
         openMusicSearched(info) {
+
+            // Azzeramenti per cambio traccia
+            store.azzeraInfo()
+            clearInterval(store.playPausa);
+
+            // Caricamento dati traccia selezionata
             store.trackPreview.title = info.track.title;
             store.trackPreview.artist = info.track.subtitle;
             store.trackPreview.img = info.track.images.coverarthq;
-            store.trackPreview.trackClicked = true;
+            store.trackStarted = true;
 
+            // Caricamento audio
             store.audioTraccia = new Audio(info.track.hub.actions[1].uri)
-            store.audioTraccia.play()
+
+            // Caricamento durtata traccia
+            store.audioTraccia.addEventListener("loadeddata", () => {
+                store.durataTraccia = Math.ceil(store.audioTraccia.duration);
+                if (store.durataTraccia >= 60) {
+                    let minuti = 1
+                    let secondi = store.durataTraccia - 60
+                    store.durataTraccia = `0${minuti}:${secondi}`
+                }
+
+                // Avvio traccia e aggiornamento tempo
+                store.audioTraccia.play()
+                store.playPausa = setInterval(store.conteggioTempo, 1000)
+
+            });
+
 
 
         },
-
+        // Funzione per apertura traccia al click (top)
         openMusicTop(info) {
+
+            // Azzeramenti per cambio traccia
+            store.azzeraInfo()
+            clearInterval(store.playPausa);
+
+            // Caricamento dati traccia selezionata
             store.trackPreview.title = info.title;
             store.trackPreview.artist = info.subtitle;
             store.trackPreview.img = info.images.coverarthq;
-            store.trackPreview.trackClicked = true;
+            store.trackStarted = true;
 
+            // Caricamento audio
             store.audioTraccia = new Audio(info.hub.actions[1].uri);
-            store.audioTraccia.play();
 
-            store.playPausa = setInterval(store.conteggioTempo, 1000)
+            // Caricamento durtata traccia
+            store.audioTraccia.addEventListener("loadeddata", () => {
+                store.durataTraccia = Math.ceil(store.audioTraccia.duration);
+                if (store.durataTraccia >= 60) {
+                    let minuti = 1
+                    let secondi = store.durataTraccia - 60
+                    store.durataTraccia = `0${minuti}:${secondi}`
+                }
+
+                // Avvio traccia e aggiornamento tempo
+                store.audioTraccia.play();
+                store.playPausa = setInterval(store.conteggioTempo, 1000)
+            });
         }
     }
-
 }
 
 </script>

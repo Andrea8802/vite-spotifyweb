@@ -24,8 +24,12 @@ export default {
             }
         },
 
-        reset() {
+        // Funzione per far ripartire la musica
+        onClickReset() {
             store.resetTrack = true;
+            document.getElementById("btn-reset").classList.add("track-reset")
+
+            setTimeout(() => document.getElementById("btn-reset").classList.remove("track-reset"), 500)
         }
     }
 
@@ -42,7 +46,7 @@ export default {
             <fa icon="fa-regular fa-circle-pause" class="play" v-if="store.trackStarted" @click="clickPause" />
             <fa icon="fa-regular fa-circle-play" class="play" v-else @click="clickPause" />
             <fa icon="fa-solid fa-forward-step" />
-            <fa icon="fa-solid fa-rotate-right" @click="reset" />
+            <fa icon="fa-solid fa-rotate-right" @click="onClickReset" id="btn-reset" />
         </div>
         <br>
 
@@ -55,13 +59,15 @@ export default {
             <!-- Barra -->
             <div class="bar">
 
-                <!-- Barra onHover -->
+                <!-- Barra tempo attuale -->
                 <div class="light-bar">
                     <div class="point"></div>
                 </div>
             </div>
+
+            <!-- Durata traccia -->
             <span>
-                1:30
+                {{ store.durataTraccia }}
             </span>
         </div>
     </div>
@@ -97,6 +103,16 @@ export default {
 
         &:hover {
             font-size: 36px;
+        }
+    }
+
+    .track-reset {
+        animation: rotate 0.5s linear reverse;
+    }
+
+    @keyframes rotate {
+        0% {
+            transform: rotate(360deg);
         }
     }
 

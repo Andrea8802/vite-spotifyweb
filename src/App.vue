@@ -55,6 +55,15 @@ export default {
       store.trackPreview.artist = store.topTracks[0].subtitle;
       store.trackPreview.img = store.topTracks[0].images.coverarthq;
       store.audioTraccia = new Audio(store.topTracks[0].hub.actions[1].uri)
+
+      store.audioTraccia.addEventListener("loadeddata", () => {
+        store.durataTraccia = Math.ceil(store.audioTraccia.duration);
+        if (store.durataTraccia >= 60) {
+          let minuti = 1
+          let secondi = store.durataTraccia - 60
+          store.durataTraccia = `0${minuti}:${secondi}`
+        }
+      });
     })
 
   }

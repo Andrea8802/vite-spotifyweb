@@ -25,6 +25,7 @@ export const store = reactive({
 
     playPausa: "", // Gestione start o stop del setInterval della traccia musicale
     audioTraccia: "", // Variabile che contiene l'audio della traccia
+    durataTraccia: "",
 
     timeTrack: "00:00", // Variabile per mostrare il tempo trascorso con la traccia
     minuteTrack: 0, // Variabile per gestire i minuti
@@ -34,27 +35,47 @@ export const store = reactive({
     resetTrack: false, // Flag per gestire il reset della traccia
     trackStarted: false, // Gestione tasto play
 
+    // Funzione per azzerare le info temporali della traccia sul footer
+    azzeraInfo: (() => {
+        let bar = document.querySelector(".foot.center .light-bar");
+        // Bloccare la traccia e la funzione
+        clearInterval(store.playPausa);
+        store.audioTraccia.pause();
+
+        // Resettare il tempo
+        store.secondsTrack = 0
+        store.minuteTrack = 0
+        store.barSize = 0;
+        store.timeTrack = "00:00";
+
+        // Resettare la barra
+        bar.style.transition = "all 0s linear"
+        bar.style.width = store.barSize + "%";
+
+        // Resettare le flag 
+        store.trackStarted = false;
+        store.resetTrack = false;
+    }),
+
     conteggioTempo: (() => {
         let bar = document.querySelector(".foot.center .light-bar");
 
         // Se la traccia arriva alla fine o se viene resettata
-        if (store.secondsTrack === 30 && store.minuteTrack === 1 || store.resetTrack) {
-            clearInterval(store.playPausa);
-            store.audioTraccia.pause();
-            store.secondsTrack, store.minuteTrack, store.barSize = 0;
-            store.timeTrack = "00:00";
-            bar.style.transition = "all 0s linear"
-            bar.style.width = store.barSize + "%";
-            store.trackStarted = false;
+        if (store.timeTrack === store.durataTraccia || store.resetTrack) {
+            store.azzeraInfo();
             return;
         }
+
+        // Se si raggiungono i 60 secondi, lo si azzera e si aggiunti 1 minuto
         if (store.secondsTrack === 59) {
             store.minuteTrack++;
             store.secondsTrack = 0;
         } else {
+            // Incremento normale
             store.secondsTrack++
         }
 
+        // Cambio di design in base a come sono composte le cifre
         if (store.secondsTrack >= 10) {
             store.timeTrack = `0${store.minuteTrack}:${store.secondsTrack}`
         } else if (store.minuteTrack >= 10) {
