@@ -1,4 +1,4 @@
-#### Spotify WebApp With Vue.js (Version IT)
+## Spotify WebApp With Vue.js (Version IT)
 
 A clone of spotify, created using an API from which covers, titles and tracks of songs are taken, with many features that make it dynamic, it also includes a loader and error handling API
 
@@ -12,16 +12,16 @@ In this version of spotify it is possible to actually listen to the songs, manag
 
 ## Home Page
 
-![[My-Spotify.png]]
+![img-1](My-Spotify.png)
 
 ## Search Page
 
-![[My-Spotify4.png]]
+![img-4](My-Spotify4.png)
 
 ## Loading Page
 
-![[My-Spotify2.png]]
+![img-2](My-Spotify2.png)
 
 ## Error Page
 
-![[My-Spotify3.png]]
+![img-3](My-Spotify3.png)
