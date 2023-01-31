@@ -1,7 +1,27 @@
-# Vue 3 + Vite
+#### Spotify WebApp With Vue.js (Version IT)
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+A clone of spotify, created using an API from which covers, titles and tracks of songs are taken, with many features that make it dynamic, it also includes a loader and error handling API
 
-## Recommended IDE Setup
+## Features
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+In this version of spotify it is possible to actually listen to the songs, manage play/pause, it is possible to search for songs, using the search bar, with a click, the selected song is displayed in the player, and it is possible to switch between the tracks and the timebar actually runs in sync with the track. The webapp is also composed of a loader and a warning in case of errors coming from the API.
+
+## Framework/Library
+
+#Vite for building, #Vue for structure, #Sass for style, #Axios for call API .
+
+## Home Page
+
+![[My-Spotify.png]]
+
+## Search Page
+
+![[My-Spotify4.png]]
+
+## Loading Page
+
+![[My-Spotify2.png]]
+
+## Error Page
+
+![[My-Spotify3.png]]
