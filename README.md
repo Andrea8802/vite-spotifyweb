@@ -16,12 +16,12 @@ In this version of spotify it is possible to actually listen to the songs, manag
 
 ## Search Page
 
-![img-4](src/assets/img-readme/img-readmeMy-Spotify4.png)
+![img-4](src/assets/img-readme/My-Spotify4.png)
 
 ## Loading Page
 
-![img-2](src/assets/img-readme/img-readmeMy-Spotify2.png)
+![img-2](src/assets/img-readme/My-Spotify2.png)
 
 ## Error Page
 
-![img-3](src/assets/img-readme/img-readmeMy-Spotify3.png)
+![img-3](src/assets/img-readme/My-Spotify3.png)
