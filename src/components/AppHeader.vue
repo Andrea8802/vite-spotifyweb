@@ -66,8 +66,8 @@ export default {
 
 <template>
     <header>
-        <img src="src/assets/img/logo.svg" alt="Logo" id="logo-l">
-        <img src="src/assets/img/logo-small.svg" alt="Logo" class="logo-s">
+        <img src="/src/assets/img/logo.svg" alt="Logo" id="logo-l">
+        <img src="/src/assets/img/logo-small.svg" alt="Logo" class="logo-s">
 
         <!-- Ricerca elementi -->
         <div class="ricerca">

@@ -42,7 +42,7 @@ export default {
 
             <!-- Download app -->
             <a href="https://www.spotify.com/it/download" class="download">
-                <img src="src/assets/img/download.svg" alt="">
+                <img src="/src/assets/img/download.svg" alt="">
                 <span>
                     Installa app
                 </span>
@@ -51,7 +51,7 @@ export default {
 
             <!-- Gestione profilo utente -->
             <a href="#" class="profile">
-                <img src="src/assets/img/profile.svg" alt="">
+                <img src="/src/assets/img/profile.svg" alt="">
                 <span>
                     User Name
                 </span>

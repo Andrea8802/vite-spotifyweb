@@ -34,7 +34,7 @@ export default {
         <div class="play-hover circle"></div>
 
         <!-- Immagine sostituiva in caso di img profilo mancante -->
-        <img src="../../../assets/img/artist-null.svg" :alt="info.artist.title" v-if="info.artist.avatar == null"
+        <img src="/src/assets/img/artist-null.svg" :alt="info.artist.title" v-if="info.artist.avatar == null"
             class="null">
 
         <!-- Immagine profilo -->
@@ -55,7 +55,7 @@ export default {
         <div class="play-hover circle"></div>
 
         <!-- Immagine sostituiva in caso di img profilo mancante -->
-        <img src="../../../assets/img/artist-null.svg" :alt="info.title" v-if="info.images == null" class="null">
+        <img src="/src/assets/img/artist-null.svg" :alt="info.title" v-if="info.images == null" class="null">
 
         <!-- Immagine profilo -->
         <img :src="info.images.background" :alt="info.title" v-else>

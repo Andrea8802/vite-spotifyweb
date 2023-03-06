@@ -45,13 +45,13 @@ export default {
 
         <!-- Logo -->
         <li>
-            <img src="src/assets/img/logo-small.svg" alt="Small Logo" class="logo-s">
+            <img src="/src/assets/img/logo-small.svg" alt="Small Logo" class="logo-s">
         </li>
 
         <!-- Link pages -->
         <li v-for="info in store.linksLeftMenu" @click="linkClicked(info)">
             <a :href="info.link" :class="info.active ? 'selected' : ''">
-                <img :src="'src/assets/img/' + info.img" :alt="info.name">
+                <img :src="'/src/assets/img/' + info.img" :alt="info.name">
                 <span>
                     {{ info.name }}
                 </span>

@@ -82,7 +82,6 @@ export default {
 </script>
 
 <template>
-
     <!-- Card ricercate -->
     <div class="card" v-for="info in data" @click="openMusicSearched(info)" v-if="store.ricercaEffettuata">
 
@@ -94,7 +93,7 @@ export default {
         </div>
 
         <!-- Immagine sostituiva in caso di copertina mancante -->
-        <img src="src/assets/img/track-null.svg" :alt="info.track.title" v-if="info.track.images == null" class="null">
+        <img src="/src/assets/img/track-null.svg" :alt="info.track.title" v-if="info.track.images == null" class="null">
 
         <!-- Copertina -->
         <img :src="info.track.images.coverarthq" :alt="info.track.title" v-else="">
@@ -123,7 +122,7 @@ export default {
         </div>
 
         <!-- Immagine sostituiva in caso di copertina mancante -->
-        <img src="../../../assets/img/track-null.svg" :alt="info.title" v-if="info.images == null" class="null">
+        <img src="/src/assets/img/track-null.svg" :alt="info.title" v-if="info.images == null" class="null">
 
         <!-- Copertina -->
         <img :src="info.images.coverarthq" :alt="info.title" v-else="">

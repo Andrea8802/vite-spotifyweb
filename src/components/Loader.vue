@@ -13,7 +13,7 @@ export default {
     <div class="loading">
 
         <!-- Logo spoify -->
-        <img src="src/assets/img/logo-loading.png" alt="" class="logo">
+        <img src="/src/assets/img/logo-loading.png" alt="" class="logo">
 
         <!-- Schermata di errore -->
         <h2 v-if="error" class="error">
@@ -26,7 +26,7 @@ export default {
                 Caricamento in corso...
             </h2>
 
-            <img src="src/assets/img/page-loader-img.svg" alt="">
+            <img src="/src/assets/img/page-loader-img.svg" alt="">
         </div>
     </div>
 

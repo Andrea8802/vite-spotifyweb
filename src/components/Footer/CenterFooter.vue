@@ -81,9 +81,8 @@ export default {
 .foot.center {
     width: 50%;
     height: 100%;
+    @include d-flex(center, center);
     flex-direction: column;
-    justify-content: center;
-    gap: 5px;
 
     .icon {
         color: white;

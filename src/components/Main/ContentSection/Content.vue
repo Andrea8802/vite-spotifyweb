@@ -31,7 +31,7 @@ export default {
                 <h2 v-if="store.erroreRicerca">
                     La ricerca "{{ store.elementoCercato }}" non ha ottento nessun risulato
                 </h2>
-                <img src="src/assets/img/loading-img.svg" alt="" v-else>
+                <img src="/src/assets/img/loading-img.svg" alt="" v-else>
             </div>
 
             <!-- Risultato -->
